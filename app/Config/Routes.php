@@ -33,7 +33,15 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Auth::index' );
-$routes->get('/landing', 'Funnel::index' );
+$routes->post('/login', 'Auth::index' );
+$routes->get('news/(:segment)', 'News::view/$1');
+$routes->get('news', 'News::index');
+$routes->get('(:any)', 'Pages::view/$1');
+
+// $routes->get('/landing', 'Funnel::index' );
+
+// $routes->get('/admintools/migrate', 'Admintools::migrate');
+// $routes->get('/admintools', 'Admintools::index' );
 // $routes->get('/login', 'Gateway::index' );
 
 /*
