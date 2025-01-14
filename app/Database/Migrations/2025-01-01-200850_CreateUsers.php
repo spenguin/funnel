@@ -16,31 +16,44 @@ class CreateUsers extends Migration
             ],
             'name' => [
                 'type'          => 'TEXT',
-                'constraint'    => '100',
+                'constraint'    => 100,
             ],
             'username' => [
                 'type'          => 'VARCHAR',
+                'constraint'        => 255,
                 'null'          => FALSE,
             ],
             'pwhash' => [
                 'type'          => 'VARCHAR',
+                'constraint'        => 255,
                 'null'          => FALSE
+            ],
+            'email' => [
+                'type'          => 'VARCHAR',
+                'constraint'    => 100,
+                'unique'        => TRUE
             ],
             'nonce' => [
                 'type'          => 'VARCHAR',
+                'constraint'        => 255,
                 'null'          => FALSE
             ],
+            'status' => [
+                'type'          => 'BOOL',
+                'default'       => 1
+            ]
             // 'created' => [
             //     'type'          => 
             // ],
-            'updated_at' => [
-                'type'          => 'varchar',
-                'null'          => TRUE,
-                'on update'     => 'NOW()'
-            ]
+            // 'updated_at' => [
+            //     'type'          => 'varchar',
+            //     'null'          => TRUE,
+            //     'on update'     => 'NOW()'
+            // ]
         ]);
         $this->forge->addKey('id', TRUE);
-        $this->forge->createTable('users');    }
+        $this->forge->createTable('users');    
+    }
 
     public function down()
     {

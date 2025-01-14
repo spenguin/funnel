@@ -36,6 +36,11 @@ $routes->get('/login', 'Auth::index' );
 $routes->post('/login', 'Auth::index' );
 $routes->get('news/(:segment)', 'News::view/$1');
 $routes->get('news', 'News::index');
+$routes->get('/migrate/status', 'Migrate::status' );
+$routes->get('/migrate/seed/(:segment)', 'Migrate::seed/$1');
+$routes->get('/migrate/seed', 'Migrate::seed');
+$routes->get('/migrate', 'Migrate::index' );
+
 $routes->get('(:any)', 'Pages::view/$1');
 
 // $routes->get('/landing', 'Funnel::index' );
