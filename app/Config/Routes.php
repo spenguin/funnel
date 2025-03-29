@@ -40,6 +40,7 @@ $routes->get('/migrate/status', 'Migrate::status' );
 $routes->get('/migrate/seed/(:segment)', 'Migrate::seed/$1');
 $routes->get('/migrate/seed', 'Migrate::seed');
 $routes->get('/migrate', 'Migrate::index' );
+$routes->get('/admin', 'Admin::index' );
 
 $routes->get('(:any)', 'Pages::view/$1');
 

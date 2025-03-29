@@ -20,32 +20,22 @@ class UserModel extends Model
      *  Validate the user. If TRUE, add user data  Session variables
      *  @return TRUE or FALSE
      */
-	public function validateLogin()
-	{	die('here');
-// 		$this->load->library( 'encryption' );
-//         $this->db->where( 'username', $this->input->post( 'username' ) ); 
-// 		$query	= $this->db->get( $this->_table );
-// 		if( $query->num_rows() > 0 )
-// 		{	
-// 			foreach( $query->result_array()  as $row )
-// 			{	
-// 				if( $this->input->post('password') == $this->encryption->decrypt( $row['pwhash'] ) )
-//                 {	
-// 					$this->session->set_userdata(array(
-// 								'id'		=> $row['id'],
-// 								'username'		=> $row['username'],
-// //								'level'		=> $row['level'],
-//                     ));
-                    
-// /*					$this->db->where( 'id', $row['id']);
-// 					$this->db->update( self::DataTable, array(
-// 											'lastLogin'	=> $row['thisLogin'],
-// 											'thisLogin'	=> time()
-// 					));*/
-// 					return TRUE;
-// 				}
-// 			}
-// 		}
-// 		return FALSE;
+        public function validateLogin()
+	{	
+        $_request = \Config\Services::request();
+        
+        $username   = $_request->getPost('username');
+        $password   = $_request->getPost('password');
+        $pwhash     = sha1( $password . getenv('salt') );
+        $user       = $this->where(['username' => $username, 'pwhash' => $pwhash])->first(); var_dump( $user);
+        if( empty($user) ) return FALSE;
+        $this->session = \Config\Services::session(); 
+
+        $this->session->set('name',$user['name']);
+        $this->session->set('logged', TRUE );
+        $this->session->set('userId', $user['id'] );
+
+        return TRUE;
+
 	}    
 }

@@ -32,15 +32,15 @@ class Auth extends BaseController
             }
             else
             {
-                // $model = new UserModel();
-                // $username = $this->_request->getPost('username'); 
-                
-                $validated = $this->_muser->validateLogin(); 
-                //     return redirect()->to( site_url() . 'admin' );
-                // else
-                // {
-                //     // Provide error message
-                // }
+                if( $validated = $this->_muser->validateLogin() )
+                {
+                    return redirect()->to( site_url() . 'admin' );
+                }
+                else
+                {
+                    // Provide error message
+                    echo 'Username or password not valid';
+                }
             }
         }
         $data['_controller'] = "auth";
