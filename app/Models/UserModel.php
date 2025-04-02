@@ -22,20 +22,20 @@ class UserModel extends Model
      */
         public function validateLogin()
 	{	
-        $_request = \Config\Services::request();
-        
-        $username   = $_request->getPost('username');
-        $password   = $_request->getPost('password');
-        $pwhash     = sha1( $password . getenv('salt') );
-        $user       = $this->where(['username' => $username, 'pwhash' => $pwhash])->first(); var_dump( $user);
-        if( empty($user) ) return FALSE;
-        $this->session = \Config\Services::session(); 
+            $_request = \Config\Services::request();
+            
+            $username   = $_request->getPost('username');
+            $password   = $_request->getPost('password');
+            $pwhash     = sha1( $password . getenv('salt') ); //die(var_dump($pwhash));
+            $user       = $this->where(['username' => $username, 'pwhash' => $pwhash])->first(); //var_dump( $user);
+            if( empty($user) ) return FALSE;
+            $this->session = \Config\Services::session(); 
 
-        $this->session->set('name',$user['name']);
-        $this->session->set('logged', TRUE );
-        $this->session->set('userId', $user['id'] );
+            $this->session->set('name',$user['name']);
+            $this->session->set('logged', TRUE );
+            $this->session->set('userId', $user['id'] );
 
-        return TRUE;
+            return TRUE;
 
 	}    
 }

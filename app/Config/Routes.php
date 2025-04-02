@@ -41,6 +41,11 @@ $routes->get('/migrate/seed/(:segment)', 'Migrate::seed/$1');
 $routes->get('/migrate/seed', 'Migrate::seed');
 $routes->get('/migrate', 'Migrate::index' );
 $routes->get('/admin', 'Admin::index' );
+$routes->get('/admin/edit/(:segment)', 'Admin::edit/$1' );
+$routes->post('/admin/edit/(:segment)', 'Admin::edit/$1' );
+$routes->get('/admin/edit', 'Admin::edit' );
+$routes->post('admin/edit', 'Admin::edit' );
+
 
 $routes->get('(:any)', 'Pages::view/$1');
 
