@@ -1,7 +1,7 @@
 <h2><?php echo esc($title); ?></h2>
-<p><a href="/admin">Cancel</a></p>
+<p><a href="/campaigns">Cancel</a></p>
 
-<form action="/admin/<?php echo $campaign['id']; ?>" method="post">
+<form action="<?php echo $action; ?>" method="post">
     <label for="name">Name: <input type="text" name="name" value="<?php echo $campaign['name']; ?>" required /></label>
     <label for="description">Description:<textarea name="description"><?php echo $campaign['description']; ?></textarea>
     <label for="sample_url">Sample URL:<input type="text" name="sample_url" value="<?php echo $campaign['sample_url']; ?>" /></label>

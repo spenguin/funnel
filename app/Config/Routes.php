@@ -32,22 +32,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/login', 'Auth::index' );
-$routes->post('/login', 'Auth::index' );
-$routes->get('news/(:segment)', 'News::view/$1');
-$routes->get('news', 'News::index');
-$routes->get('/migrate/status', 'Migrate::status' );
-$routes->get('/migrate/seed/(:segment)', 'Migrate::seed/$1');
-$routes->get('/migrate/seed', 'Migrate::seed');
-$routes->get('/migrate', 'Migrate::index' );
-$routes->get('/admin', 'Admin::index' );
-$routes->get('/admin/edit/(:segment)', 'Admin::edit/$1' );
-$routes->post('/admin/edit/(:segment)', 'Admin::edit/$1' );
-$routes->get('/admin/edit', 'Admin::edit' );
-$routes->post('admin/edit', 'Admin::edit' );
 
-
-$routes->get('(:any)', 'Pages::view/$1');
 
 // $routes->get('/landing', 'Funnel::index' );
 
@@ -71,3 +56,39 @@ $routes->get('(:any)', 'Pages::view/$1');
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+
+$routes->get('/login', 'Auth::index' );
+$routes->post('/login', 'Auth::index' );
+$routes->get('news/(:segment)', 'News::view/$1');
+$routes->get('news', 'News::index');
+$routes->get('/migrate/status', 'Migrate::status' );
+$routes->get('/migrate/seed/(:segment)', 'Migrate::seed/$1');
+$routes->get('/migrate/seed', 'Migrate::seed');
+$routes->get('/migrate', 'Migrate::index' );
+
+// Desktop
+$routes->get('admin', 'Admin::index' );
+
+// Campaigns
+$routes->get('campaigns', 'Campaigns::index' );
+// $routes->get('campaigns/create', 'Campaigns::create' );
+$routes->get('campaigns/create', 'Campaigns::edit' );
+$routes->post('campaigns', 'Campaigns::store' );
+// $routes->get('campaigns/(:num)', 'Campaigns::show/$1' );
+$routes->get('campaigns/(:num)', 'Campaigns::edit/$1' );
+
+$routes->post('campaigns/(:num)', 'Campaigns::update/$1' );
+$routes->delete('campaigns/(:num)', 'Campaigns::destroy/$i' );
+// $routes->post('admin', 'Admin::store' );
+// $routes->get('admin/(:num)', 'Admin::show/$1' );
+// $routes->post('admin/(:num)', 'Admin::update/$1' );
+// $routes->delete('client/(:num)', 'Admin/destroy/$1' );
+
+
+// $routes->get('/admin/edit/(:num)', 'Admin::edit/$1' );
+// $routes->post('/admin/edit/(:num)', 'Admin::edit/$1' );
+// $routes->get('/admin/edit', 'Admin::edit' );
+// $routes->post('admin/edit', 'Admin::edit' );
+
+
+$routes->get('(:any)', 'Pages::view/$1');

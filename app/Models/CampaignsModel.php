@@ -12,7 +12,7 @@ class CampaignsModel extends Model
     // protected $returnType     = 'array';
     // protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['name', 'slug', 'description', 'short_url', 'status', 'pledge_goal', 'pledge_count'];
+    protected $allowedFields = ['name', 'slug', 'description', 'sample_url', 'status', 'pledge_goal', 'pledge_count'];
 
     // protected $useTimestamps = false;
     protected $createdField  = 'createdAt';
@@ -31,5 +31,19 @@ class CampaignsModel extends Model
         }
     
         return $this->where(['id' => $campaignId])->first();
-    }    
+    }  
+    
+    
+    // public function upsert( $id, $data )
+    // {die($id);
+    //     if( !empty($id) )
+    //     {
+    //         $record = $this->where(['id' => $campaignId])->first(); 
+    //         $record->update( $id, $data );
+    //     }
+    //     else 
+    //     {
+    //         $this->insert( $data );
+    //     }
+    // }
 }

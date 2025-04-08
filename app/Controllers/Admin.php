@@ -3,6 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\CampaignsModel;
+use CodeIgniter\HTTP\Response;
+use CodeIgniter\HTTP\ResponseInterface;
+use Exception;
 
 class Admin extends BaseController
 {
@@ -13,6 +16,10 @@ class Admin extends BaseController
 		$this->_validation	= service('validation');
     }
 
+    /**
+     * Get all Campaigns
+     * @return Response
+     */
     public function index()
     {
         $data = [
@@ -23,68 +30,88 @@ class Admin extends BaseController
         echo view( 'templates/header', $data );
         echo view( 'admin/overview', $data );
         echo view( 'templates/footer', $data );
-        // return view('admin/home');
     }
 
     /**
-     * Create new Campaign or Edit existing one
+     * Create a new Client
      */
-    public function edit($id=NULL)
-    {   
-        if( $this->_request->getPost('submit') )
-        {
-            $data = $this->_request->getPost(); 
-            $this->_validation->setRule( 'name', 'Name', 'trim|required' );
+    public function store()
+    {
+        $this->_validation->setRule( 'name', 'Name', 'trim|required' );
 
-            if( ! $this->_validation->run($data) )
-            {
-                // Provide error messages
-                // $errors = $this->_validation->getErrors();
-                // die($errors);
-                // die( 'Nope');
-            }
-            else
-            {
-                $insert = [
-                    'name'  => $data['name'],
-                    'slug'  => strtolower(url_title($data['name'])),
-                    'description'   => $data['description'],
-                    'sample_url'    => $data['sample_url'],
-                    'pledge_goal'   => intval($data['goal'])
-                ]; 
-                try{
-                    $this->_mcampaigns->insert($data);
-                    // $session->setFlashdata('msg', 'Record Inserted successfully');
+        $input = $this->_request->getPost(); 
 
-                }
-                catch(\Exception $e){
-                    // $session->setFlashdata('msg', 'Something went wrong');
-                }
-
-                return redirect()->to( site_url() . 'admin' );
-                // $slug = url_title($string);
-                // $slug = strtolower($slug);
-            }            
-
-
-        }
+        if (!$this->validateRequest($input, $rules)) {
+            return $this
+                ->getResponse(
+                    $this->validator->getErrors(),
+                    ResponseInterface::HTTP_BAD_REQUEST
+                );
+        } 
+        $campaign = new $this->_mcampaigns();
+        $campaign->save($input);
         
-        
-        
-        $campaign = [];
-        if( !is_null($id) )
-        {
-            $campaign = $this->_mcampaigns->getCampaign($id);
-            
-        } else {
+        return redirect()->to( site_url() . 'admin' );
+    }
 
-        }
+    /**
+     * Display a single Campaign by ID
+     */
+    public function show($id)
+    {
+        $campaign = $this->_mcampaigns->getCampaign($id);
+
         $data['campaign']   = $campaign;
-        $data['title']      = isset( $campaign['title'] ) ? 'Edit ' . $campaign['title']: 'Create New Campaign';
+        $data['title']      = !empty( $campaign['name'] ) ? 'Edit Campaign: ' . $campaign['name']: 'Create New Campaign';
 
         echo view( 'templates/header', $data );
         echo view( 'admin/campaign/edit', $data );
         echo view( 'templates/footer', $data );
     }
+
+    /**
+     * Update Campaign
+     */
+    public function update($id)
+    {
+        try {
+            $campaign   = new $this->_mcampaigns;
+            $campaign->getCampaign($id);
+
+            $input      = $this->_request->getPost(); 
+
+            $campaign->update($id, $input);
+
+            return redirect()->to( site_url() . 'admin' );
+        
+        } catch (Exception $exception) { var_dump($exception->getMessage());
+            // return $this->getResponse(
+            //     [
+            //         'message' => $exception->getMessage()
+            //     ],
+            //     ResponseInterface::HTTP_NOT_FOUND
+            // );
+        }
+    }
+
+    /**
+     * Destroy Campaign
+     */
+    public function destroy ($id)
+    {
+        try {
+            $campaign = new $this->_mcampaigns;
+            $campaign->getCampaign($id);
+            $campaign->delete($campaign);
+
+            return redirect()->to( site_url() . 'admin' );
+        } catch (Exception $exception) {
+            return $this->getResponse(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                ResponseInterface::HTTP_NOT_FOUND
+            );
+        }
+    }
 }
-   

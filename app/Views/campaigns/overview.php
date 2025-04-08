@@ -1,5 +1,5 @@
 <h2><?php echo esc($title); ?><h2>
-<p><a href="/admin/edit">Create New Campaign</a></p>
+<p><a href="/campaigns/create">Create New Campaign</a></p>
 <table>
     <thead>
         <tr>
@@ -21,7 +21,7 @@
                 foreach( $campaigns as $key => $campaign )
                 { ?>
                     <tr>
-                        <td><a href="/admin/<?php echo $campaign['id']; ?>"><?php echo $campaign['id']; ?></a></td>
+                        <td><a href="/campaigns/<?php echo $campaign['id']; ?>"><?php echo $campaign['id']; ?></a></td>
                         <td><?php echo $campaign['name']; ?></td>
                         <td><?php echo $campaign['description']; ?></td>
                         <td><?php echo $campaign['pledge_goal']; ?></td>
@@ -30,7 +30,7 @@
                         <td>0</td>
                         <td><?php echo $campaign['createdAt']; ?></td>
                         <td><?php echo $campaign['status']; ?></td>
-                        <td><a href="/admin/delete/<?php echo $key; ?>">X</a></td>
+                        <td><a href="/campaigns/delete/<?php echo $key; ?>">X</a></td>
                     </tr>
                 <?php }
 
