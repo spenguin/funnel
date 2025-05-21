@@ -76,9 +76,11 @@ $routes->get('campaigns/create', 'Campaigns::edit' );
 $routes->post('campaigns', 'Campaigns::store' );
 // $routes->get('campaigns/(:num)', 'Campaigns::show/$1' );
 $routes->get('campaigns/(:num)', 'Campaigns::edit/$1' );
-
 $routes->post('campaigns/(:num)', 'Campaigns::update/$1' );
 $routes->delete('campaigns/(:num)', 'Campaigns::destroy/$i' );
+
+$routes->get('preview/(:any)', 'Funnel::preview/$1' );
+
 // $routes->post('admin', 'Admin::store' );
 // $routes->get('admin/(:num)', 'Admin::show/$1' );
 // $routes->post('admin/(:num)', 'Admin::update/$1' );

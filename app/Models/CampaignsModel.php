@@ -32,6 +32,15 @@ class CampaignsModel extends Model
     
         return $this->where(['id' => $campaignId])->first();
     }  
+
+    public function getCampaignBySlug($campaignSlug = NULL)
+    {
+        if (is_null($campaignSlug) ) {
+            return NULL;
+        }
+
+        return $this->where(['slug'=>$campaignSlug])->first();
+    }
     
     
     // public function upsert( $id, $data )
