@@ -22,32 +22,15 @@ class Funnel extends BaseController
         {
             throw new \CodeIgniter\Exceptions\PageNotFoundException($slug);
         }
-        $campaign   = $this->_mcampaigns->getCampaignBySlug($slug); 
+        $campaign   = $this->_mcampaigns->getCampaignBySlug($slug);
         if( is_null($campaign))
         {
             throw new \CodeIgniter\Exceptions\PageNotFoundException($slug);
         }
-        return '<p>Campaign found. Display Offer</p>';
+        $data   = ['_controller'=>'funnel'];
+        echo view( 'campaigns/' . $campaign['id'] . '/header', $data );
+        echo view( 'campaigns/common/landingpage', $data );
+        echo view( 'campaigns/' . $campaign['id'] . '/footer', $data );
     }
 
 }
-
-
-// namespace App\Controllers;
-
-// class Funnel extends BaseController
-// {
-
-//     var $_funnelName;
-
-//     function __construct()
-//     {
-//         $this->_funnelName = "test";
-//     }
-    
-//     public function index()
-//     {
-//         $data['_controller'] = "funnel";
-//         return view('funnel/' . $this->_funnelName . '/landing', $data);
-//     }
-// }
