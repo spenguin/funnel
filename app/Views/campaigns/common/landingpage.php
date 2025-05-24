@@ -27,5 +27,9 @@
     </div>
 <?php endif; ?>
 <div class="form">
-    <p>Form</p>
+    <form action="<?php echo base_url();?>/preview/<?php echo $this->data['slug']; ?>" method="post">
+        <label for="name">Name: <input type="text" name="name" required/></label>
+        <label for="email">Email: <input type="email" name="email" required/></label>
+        <input type="submit" name="submit" value="I'd like to see it" />
+    </form>
 </div>
