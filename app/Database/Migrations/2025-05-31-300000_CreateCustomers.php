@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateAssetTypes extends Migration
+class CreateCustomers extends Migration
 {
 
     public function up()
@@ -19,13 +19,24 @@ class CreateAssetTypes extends Migration
                 'type'      => 'TEXT',
                 'constraint'=> 100,
                 'null'      => FALSE
-            ]
+            ],
+            'email'  => [
+                'type'      => 'TEXT',
+                'null'      => false
+            ],
+            'created_on timestamp default now()',
+            'status'        => [
+                'type'      => 'INT',
+                'constraint'=> 2,
+                'unsigned'  => TRUE,
+                'default'   => 1
+            ],
         ]);
         $this->forge->addKey('id', TRUE);
-        $this->forge->createTable('asset_types'); 
+        $this->forge->createTable('customers'); 
     } 
     public function down()
     {
-        $this->forge->dropTable('asset_types');    
+        $this->forge->dropTable('customers');    
     }    
 }           

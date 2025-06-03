@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CampaignAssets extends Migration
+class CreateCustomersCampaign extends Migration
 {
 
     public function up()
@@ -15,25 +15,27 @@ class CampaignAssets extends Migration
                 'unsigned'  => TRUE,
                 'auto_increment'    => TRUE
             ],
+            'customer_id'    => [
+                'type'      => 'INT',
+                'unsigned'  => TRUE,
+            ],  
             'campaign_id'    => [
                 'type'      => 'INT',
                 'unsigned'  => TRUE,
-            ],   
-            'asset_type_id'    => [
+            ],                       
+            'created_on timestamp default now()',
+            'status'        => [
                 'type'      => 'INT',
+                'constraint'=> 2,
                 'unsigned'  => TRUE,
-            ],                      
-            'name'  => [
-                'type'      => 'TEXT',
-                'constraint'=> 100,
-                'null'      => FALSE
-            ]
+                'default'   => 1
+            ],
         ]);
         $this->forge->addKey('id', TRUE);
-        $this->forge->createTable('campaign_assets'); 
+        $this->forge->createTable('customer_campaign'); 
     } 
     public function down()
     {
-        $this->forge->dropTable('campaign_assets');    
+        $this->forge->dropTable('customer_campaign');    
     }    
 }           

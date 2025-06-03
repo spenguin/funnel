@@ -6,12 +6,14 @@ use App\Models\CampaignsModel;
 use CodeIgniter\HTTP\Response;
 use CodeIgniter\HTTP\ResponseInterface;
 use Exception;
+use Config\Email; 
 
 class Funnel extends BaseController
 {
     public function __construct()
     {
         $this->_mcampaigns = model(CampaignsModel::class);
+        $this->_mcustomers = model(CustomersModel::class);
         $this->_request = \Config\Services::request();
 		$this->_validation	= service('validation');
     }
@@ -68,10 +70,27 @@ class Funnel extends BaseController
                     ResponseInterface::HTTP_BAD_REQUEST
                 );
         } 
+        // Save input
+        // Create Customer if new; else return existing
+        $customer = $this->_mcustomers->getCustomerByEmail( $input['email'] );
+        if( is_null( $customer ) )
+        {
+            $customer = new $this->_mcustomers();
+            $customer->save($input);
+        }
 
+        // Trigger first email sent
 
-        // $campaign = new $this->_mcampaigns();
-        // $campaign->save($input);
+        $email = new Email(); 
+ 
+        $to = $input['email']; //'weirdspace'; 
+        $subject = 'Your Preview of ' . $campaign['name'] . ', as requested'; 
+        $body = '<h1>This is a test email</h1>'; 
+
+        if( !$email->sendEmail($to, $subject, $body) )
+        {
+            return "Something went wrong with sending the email. Please try again!";
+        }
         
         return redirect()->to( site_url() . 'special-offer/' . $slug );
     }
@@ -101,5 +120,52 @@ class Funnel extends BaseController
         echo view( 'campaigns/' . $campaign['id'] . '/footer', $data );
         
     }
+
+
+    function send(){
+        // Load PHPMailer library
+        $this->load->library('phpmailer_lib');
+        
+        // PHPMailer object
+        $mail = $this->phpmailer_lib->load();
+        
+        // SMTP configuration
+        $mail->isSMTP();
+        $mail->Host     = getenv('SMTPServer'); //'smtp.example.com';
+        $mail->SMTPAuth = TRUE;
+        $mail->Username = getenv('Username'); //'user@example.com';
+        $mail->Password = getenv('Password'); //'********';
+        $mail->SMTPSecure = getenv('Protocol'); //'ssl';
+        $mail->Port     = getenv('Port'); //465;
+        
+        $mail->setFrom('info@example.com', 'CodexWorld');
+        $mail->addReplyTo('info@example.com', 'CodexWorld');
+        
+        // Add a recipient
+        $mail->addAddress('makecontact@weirdspace.com');
+        
+        // // Add cc or bcc 
+        // $mail->addCC('cc@example.com');
+        // $mail->addBCC('bcc@example.com');
+        
+        // Email subject
+        $mail->Subject = 'Send Email via SMTP using PHPMailer in CodeIgniter';
+        
+        // Set email format to HTML
+        $mail->isHTML(true);
+        
+        // Email body content
+        $mailContent = "<h1>Send HTML Email using SMTP in CodeIgniter</h1>
+            <p>This is a test email sending using SMTP mail server with PHPMailer.</p>";
+        $mail->Body = $mailContent;
+        
+        // Send email
+        if(!$mail->send()){
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+        }else{
+            echo 'Message has been sent';
+        }
+    }    
 
 }

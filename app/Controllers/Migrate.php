@@ -12,7 +12,7 @@ class Migrate extends BaseController
     
     function status()
     {
-        echo command('migrate:status');
+        echo '<pre>' . command('migrate:status'). '</pre>';
     }
 
     /**
