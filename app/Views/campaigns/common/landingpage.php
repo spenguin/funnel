@@ -1,3 +1,14 @@
+<header class="header">
+    <div class="header__text">
+        <h1>Write. Publish. Repeat.</h1>
+        <h2>The No Luck Required Guide to Self-Publishing</h2>
+        <p>In this book, you’ll learn:</p>
+    </div>
+    <div clas="header__image">
+    </div>
+</header>
+
+
 <div class="opening">
     <p>Opening</p>
 

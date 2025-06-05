@@ -82,6 +82,7 @@ class Campaigns extends BaseController
                     ResponseInterface::HTTP_BAD_REQUEST
                 );
         } 
+        $input['slug']  = url_title( $input['name'] );
         $campaign = new $this->_mcampaigns();
         $campaign->save($input);
         $campaign_id = $this->_mcampaigns->db->insertID(); 

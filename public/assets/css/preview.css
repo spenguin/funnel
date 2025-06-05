@@ -1,0 +1,65 @@
+/** Global settings */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  margin-top: 0;
+  background-color: white;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+}
+
+/** Variables for site */
+/** Breakpoints */
+/** 	Mixins */
+/**
+Function to wrap appropriate media query around content
+param: screen size, either tablet or desktop 
+Requires breakpoints to be set or imported
+*/
+/** Form styling */
+form label {
+  display: block;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+form label input {
+  margin-left: 0.5rem;
+}
+form label input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 1.25rem;
+}
+form label input[type=email] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 1.25rem;
+}
+form input[type=submit] {
+  background-color: blueviolet;
+  color: white;
+  font-size: 1.25rem;
+  border: none;
+  font-size: 1.25rem;
+  float: right;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+/** Structure styles */
+.container {
+  padding: 0 2.5%;
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=preview.css.map */

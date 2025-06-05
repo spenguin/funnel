@@ -1,0 +1,33 @@
+/** Form styling */
+
+form {
+    label {
+        display: block;
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        input {
+            margin-left: 0.5rem;
+            &[type=text] {
+                padding: 12px 20px;
+                margin: 8px 0;
+                font-size: 1.25rem;
+            }
+            &[type=email] {
+                padding: 12px 20px;
+                margin: 8px 0;  
+                font-size: 1.25rem;          
+            }
+
+        }
+    }
+    input[type=submit] {
+        background-color: blueviolet;
+        color: white;
+        font-size: 1.25rem;
+        border: none;
+        font-size: 1.25rem;
+        float: right;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+    }
+}

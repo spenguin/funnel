@@ -1,0 +1,2 @@
+cd J:\Weirdspace\Projects\Funnel\build\public\assets\css
+sass --watch scss/main.scss:preview.css
