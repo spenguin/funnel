@@ -1,10 +1,11 @@
 <header class="header">
-    <div class="header__text">
-        <h1>Write. Publish. Repeat.</h1>
-        <h2>The No Luck Required Guide to Self-Publishing</h2>
-        <p>In this book, you’ll learn:</p>
-    </div>
-    <div clas="header__image">
+    <div class="header__wrapper">
+        <div class="header__text">
+            <?php echo $heading; ?>
+        </div>
+        <div class="header__image">
+            <img src="<?php echo base_url(); ?>/<?php echo $slug; ?>/images/cover-image.png" />
+        </div>
     </div>
 </header>
 

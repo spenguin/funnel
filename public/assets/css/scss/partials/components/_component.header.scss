@@ -1,0 +1,29 @@
+/** Header styling */
+
+.header {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 0 2.5%;
+        width: 95%;
+        max-width: $maxWidth;
+        margin: 0 auto;
+        @include screen-greater-than(tablet) {
+            flex-direction: row;
+        }    
+
+    }
+    &__text {
+        @include screen-greater-than(tablet) {
+            width: 55%;
+        }
+    }
+    &__image {
+        @include screen-greater-than(tablet) {
+            width: 45%;
+        }
+        img {
+            width: 100%;
+        }        
+    }
+}

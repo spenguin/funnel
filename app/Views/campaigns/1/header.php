@@ -12,6 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
     <link rel="stylesheet" href=" <?php echo base_url(); ?>/assets/css/preview.css">
+	<link rel="stylesheet" href=" <?php echo base_url(); ?>/<?php echo $this->data['slug']; ?>/css/<?php echo $this->data['slug']; ?>.css">
 </head>
 <body class="<?php echo $this->data['_controller'] . ' ' . $this->data['slug']; ?>">
 	<header>

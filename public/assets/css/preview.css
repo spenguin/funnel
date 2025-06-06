@@ -55,11 +55,33 @@ form input[type=submit] {
 }
 
 /** Structure styles */
-.container {
+/** Component aggregator */
+/** Header styling */
+.header__wrapper {
+  display: flex;
+  flex-direction: column;
   padding: 0 2.5%;
   width: 95%;
-  max-width: 600px;
+  max-width: 1280px;
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .header__wrapper {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__text {
+    width: 55%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__image {
+    width: 45%;
+  }
+}
+.header__image img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=preview.css.map */
