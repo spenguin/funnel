@@ -54,6 +54,12 @@ form input[type=submit] {
   border-radius: 0.25rem;
 }
 
+/** Headings styles */
+h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+
 /** Structure styles */
 /** Component aggregator */
 /** Header styling */
@@ -82,6 +88,74 @@ form input[type=submit] {
 }
 .header__image img {
   width: 100%;
+}
+
+/** Quote default styles */
+.quote__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+  max-width: 1280px;
+}
+@media screen and (min-width: 768px) {
+  .quote__wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 2.5% 2rem 2.5% !important;
+    border-bottom: 1px solid black;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quote {
+    width: 30%;
+  }
+}
+.quote p {
+  font-size: 1.35rem;
+  line-height: 2rem;
+}
+.quote p.quote__name {
+  text-align: right;
+  font-weight: 600;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+.quote p.quote__title {
+  text-align: right;
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+/** Explanation default style */
+.explanation {
+  padding: 0 5%;
+  max-width: 1280px;
+  font-size: 1.35rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .explanation {
+    margin: 0 auto;
+    padding: 0 2.5% 2rem 2.5% !important;
+    border-bottom: 1px solid black;
+  }
+}
+
+/** Default Form section style */
+.form {
+  padding: 0 5%;
+  max-width: 1280px;
+  font-size: 1.35rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .form {
+    margin: 0 auto;
+    padding: 0 2.5% 2rem 2.5% !important;
+    border-bottom: 1px solid black;
+  }
 }
 
 /*# sourceMappingURL=preview.css.map */

@@ -1,0 +1,37 @@
+/** Quote default styles */
+
+.quote__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    max-width: $maxWidth;
+    @include screen-greater-than(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0 2.5% 2rem 2.5%!important;
+        border-bottom: 1px solid black;
+    }
+}
+.quote {
+    @include screen-greater-than(tablet) {
+        width: 30%;
+    }
+    p {
+        font-size: 1.35rem;
+        line-height: 2rem;
+        &.quote {
+            &__name {
+                text-align: right;
+                font-weight: 600;
+                margin-bottom: 0;
+                font-size: 1.25rem;
+            }
+            &__title {
+                text-align: right;
+                margin-top: 0;
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
