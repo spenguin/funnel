@@ -53,12 +53,14 @@
 <?php endif; ?> -->
 <div class="book">
     <h3>About the Book</h3>
-    <p class="book__title">Salmonella Smorgasbord</p>
-    <p>Page count: 256pp</p>
-    <p>Trim size: h 180mm x w 260mm</p>
-    <p>Illustrations: Full Colour</p>
-    <p>Format: Digital, Softcover</p>
-    <p>ISBN: 978-1-908030-54-2</p>
+    <div class="book__wrapper">
+        <p class="book__title">Salmonella Smorgasbord</p>
+        <p>Page count: 256pp</p>
+        <p>Trim size: h 180mm x w 260mm</p>
+        <p>Illustrations: Full Colour</p>
+        <p>Format: Digital, Softcover</p>
+        <p>ISBN: 978-1-908030-54-2</p>
+    </div>
 </div>
 <div class="creators">
     <h3>About the Authors</h3>
@@ -75,5 +77,6 @@
         <label for="name">Name: <input type="text" name="name" required/></label>
         <label for="email">Email: <input type="email" name="email" required/></label>
         <input type="submit" name="submit" value="I'd like to see it" />
+        <p>Your preview will appear in your inbox shortly. When the campaign for the title is about to begin, we will contact you again.</p>
     </form>
 </div>

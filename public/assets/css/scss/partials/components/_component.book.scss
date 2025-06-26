@@ -1,0 +1,18 @@
+/** Default Book section style */
+
+.book {
+    &__wrapper {
+        padding: 0 5%;
+        max-width: $maxWidth;
+        font-size: 1.35rem;
+        line-height: 2rem;
+        @include screen-greater-than(tablet) {
+            margin: 0 auto;
+            padding: 0 2.5% 2rem 2.5%!important;
+            border-bottom: 1px solid black;
+        }
+    }
+    &__title {
+        font-weight: 600;
+    }
+}
