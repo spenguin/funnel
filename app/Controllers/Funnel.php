@@ -14,6 +14,7 @@ class Funnel extends BaseController
     {
         $this->_mcampaigns = model(CampaignsModel::class);
         $this->_mcustomers = model(CustomersModel::class);
+        $this->_mcampaign_emails = model(CampaignEmailsModel::class);
         $this->_request = \Config\Services::request();
 		$this->_validation	= service('validation');
     }
@@ -84,16 +85,20 @@ class Funnel extends BaseController
 
         // Trigger first email sent
 
+        $campaign_email = $this->_mcampaign_emails->getCampaignEmail($campaign['id'], 1 );
+
         $email = new Email(); 
  
         $to = $input['email']; //'weirdspace'; 
-        $subject = 'Your Preview of ' . $campaign['name'] . ', as requested'; 
-        $body = '<h1>This is a test email</h1>'; 
+        $subject = sprintf($campaign_email['subject'], $campaign['name']); //'Your Preview of ' . $campaign['name'] . ', as requested'; 
+        $body = sprintf($campaign_email['body'], $campaign['name'], $campaign['sample_url']); //'<h1>This is a test email</h1>'; 
 
         if( !$email->sendEmail($to, $subject, $body) )
         {
             return "Something went wrong with sending the email. Please try again!";
         }
+
+        // We need to record that the email went out
         
         return redirect()->to( site_url() . 'special-offer/' . $slug );
     }
@@ -116,7 +121,10 @@ class Funnel extends BaseController
             '_controller'   => 'funnel', 
             'slug'          => $slug,
             'description'   => $campaign['description'],
-            'title'         => $campaign['name']
+            'title'         => $campaign['name'],
+            'heading'       => '<h1>Meanwhile... The Best</h1>
+            <h2>At 25% off cover price!</h2>
+            <p>Plus free shipping</p>'
         ];        
         echo view( 'campaigns/' . $campaign['id'] . '/header', $data );
         echo view( 'campaigns/common/specialoffer', $data );

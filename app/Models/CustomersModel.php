@@ -8,6 +8,8 @@ class CustomersModel extends Model
 {
     protected $table = 'customers';
 
+    protected $allowedFields = ['name', 'email'];
+
     public function getCustomerByEmail($email = NULL)
     {
         if (is_null($email) ) {
