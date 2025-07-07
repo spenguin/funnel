@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateCustomersCampaign extends Migration
+class CreateCampaignCustomers extends Migration
 {
 
     public function up()
@@ -23,19 +23,22 @@ class CreateCustomersCampaign extends Migration
                 'type'      => 'INT',
                 'unsigned'  => TRUE,
             ],                       
-            'created_on timestamp default now()',
-            'status'        => [
-                'type'      => 'INT',
-                'constraint'=> 2,
-                'unsigned'  => TRUE,
-                'default'   => 1
+            'created timestamp default now()',
+            'paid'          => [
+                'type'      => 'TIMESTAMP'
             ],
+            'campaign_email_sent'   => [
+                'type'      => 'INT'
+            ],
+            'campaign_email_sent_date'  => [
+                'type'      => 'TIMESTAMP'
+            ]
         ]);
         $this->forge->addKey('id', TRUE);
-        $this->forge->createTable('customer_campaign'); 
+        $this->forge->createTable('campaign_customers'); 
     } 
     public function down()
     {
-        $this->forge->dropTable('customer_campaign');    
+        $this->forge->dropTable('campaign_customers');    
     }    
 }           

@@ -13,7 +13,7 @@ class Campaigns extends BaseController
     {
         $this->_mcampaigns  = model(CampaignsModel::class);
         $this->_memail_types= model(EmailTypesModel::class);
-        $this->_mcampaign_email_type = model(CampaignEmailTypesModel::class);
+        // $this->_mcampaign_email_type = model(CampaignEmailTypesModel::class);
         $this->_request     = \Config\Services::request();
 		$this->_validation	= service('validation');
     }
@@ -88,16 +88,16 @@ class Campaigns extends BaseController
         $campaign_id = $this->_mcampaigns->db->insertID(); 
 
         // Create the Campaign email_types
-        $email_types = $this->_memail_types->getEmailTypes();
-        foreach($email_types as $email_type )
-        {
-            $campaign_email_type    = new $this->_mcampaign_email_type();
-            $args   = [
-                'email_type_id' => $email_type['id'],
-                'campaign_id'   => $campaign_id
-            ];
-            $campaign_email_type->save($args);
-        }
+        // $email_types = $this->_memail_types->getEmailTypes();
+        // foreach($email_types as $email_type )
+        // {
+        //     $campaign_email_type    = new $this->_mcampaign_email_type();
+        //     $args   = [
+        //         'email_type_id' => $email_type['id'],
+        //         'campaign_id'   => $campaign_id
+        //     ];
+        //     $campaign_email_type->save($args);
+        // }
         
         return redirect()->to( site_url() . 'campaigns' );
     }

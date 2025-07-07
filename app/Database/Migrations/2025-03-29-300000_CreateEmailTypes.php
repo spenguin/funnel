@@ -24,6 +24,14 @@ class CreateEmailTypes extends Migration
                 'type'      => 'INT',
                 'constraint'=> 2,
                 'null'      => TRUE
+            ],
+            'follows'   => [
+                'type'  => 'INT',
+                'unsigned'  => TRUE
+            ],
+            'paid_status'   => [
+                'type'          => 'BOOL',
+                'default'       => 0
             ]
         ]);
         $this->forge->addKey('id', TRUE);

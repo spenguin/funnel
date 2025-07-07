@@ -123,8 +123,9 @@ class Funnel extends BaseController
             'description'   => $campaign['description'],
             'title'         => $campaign['name'],
             'heading'       => '<h1>Meanwhile... The Best</h1>
-            <h2>At 25% off cover price!</h2>
-            <p>Plus free shipping</p>'
+            <h2>Get <soan class="shout">25%</span> off cover price!</h2>
+            <p><em>Plus free shipping</em></p>
+            <p>For £1 now!</p>'
         ];        
         echo view( 'campaigns/' . $campaign['id'] . '/header', $data );
         echo view( 'campaigns/common/specialoffer', $data );

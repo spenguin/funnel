@@ -64,6 +64,7 @@ $routes->get('news', 'News::index');
 $routes->get('/migrate/status', 'Migrate::status' );
 $routes->get('/migrate/seed/(:segment)', 'Migrate::seed/$1');
 $routes->get('/migrate/seed', 'Migrate::seed');
+$routes->get('/migrate/rollback', 'Migrate::rollback');
 $routes->get('/migrate', 'Migrate::index' );
 
 // Desktop

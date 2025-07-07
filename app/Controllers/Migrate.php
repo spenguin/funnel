@@ -29,6 +29,14 @@ class Migrate extends BaseController
 
     }
 
+    /**
+     * Run Rollback
+     */
+    function rollback()
+    {
+        echo command('migrate:rollback');
+    }
+
 
     // function __construct()
     // {

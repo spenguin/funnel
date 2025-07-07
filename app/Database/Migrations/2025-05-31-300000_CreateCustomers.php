@@ -24,7 +24,12 @@ class CreateCustomers extends Migration
                 'type'      => 'TEXT',
                 'null'      => false
             ],
-            'created_on timestamp default now()',
+            'token' => [
+                'type'          => 'VARCHAR',
+                'constraint'        => 255,
+                'null'          => FALSE
+            ],
+            'created timestamp default now()',
             'status'        => [
                 'type'      => 'INT',
                 'constraint'=> 2,
