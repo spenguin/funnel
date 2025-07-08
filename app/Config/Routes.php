@@ -70,6 +70,12 @@ $routes->get('/migrate', 'Migrate::index' );
 // Desktop
 $routes->get('admin', 'Admin::index' );
 
+// Payment Gateway
+// $routes->get('donate', 'PaymentController::donate');
+// $routes->post('stripe/payment', 'PaymentController::payment');
+// $routes->get('stripe/payment-success/', 'PaymentController::payment_success');
+// $routes->get('stripe/payment-cancel', 'PaymentController::payment_cancel');
+
 // Campaigns
 $routes->get('campaigns', 'Campaigns::index' );
 // $routes->get('campaigns/create', 'Campaigns::create' );
