@@ -117,6 +117,10 @@ class Funnel extends BaseController
         {
             throw new \CodeIgniter\Exceptions\PageNotFoundException($slug);
         }
+        if( isset($_REQUEST['token'] ) )
+        {
+
+        }
         $data   = [
             '_controller'   => 'funnel', 
             'slug'          => $slug,

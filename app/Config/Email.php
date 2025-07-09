@@ -5,9 +5,9 @@ namespace Config;
 use PHPMailer\PHPMailer\PHPMailer; 
 use PHPMailer\PHPMailer\Exception; 
 
-        require_once APPPATH.'ThirdParty/PHPMailer/src/Exception.php';
-        require_once APPPATH.'ThirdParty/PHPMailer/src/PHPMailer.php';
-        require_once APPPATH.'ThirdParty/PHPMailer/src/SMTP.php';
+require_once APPPATH.'ThirdParty/PHPMailer/src/Exception.php';
+require_once APPPATH.'ThirdParty/PHPMailer/src/PHPMailer.php';
+require_once APPPATH.'ThirdParty/PHPMailer/src/SMTP.php';
  
 class Email 
 { 

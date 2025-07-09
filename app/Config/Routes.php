@@ -75,6 +75,7 @@ $routes->get('admin', 'Admin::index' );
 // $routes->post('stripe/payment', 'PaymentController::payment');
 // $routes->get('stripe/payment-success/', 'PaymentController::payment_success');
 // $routes->get('stripe/payment-cancel', 'PaymentController::payment_cancel');
+$routes->post('payment', 'PaymentGateway::payment');
 
 // Campaigns
 $routes->get('campaigns', 'Campaigns::index' );

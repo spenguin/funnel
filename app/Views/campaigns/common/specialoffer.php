@@ -20,4 +20,13 @@
     <p>But you need to act fast. As soon as the campaign starts, this special offer will no longer be available.</p>
 </div>
 <div class="payment">
+    <script async
+        src="https://js.stripe.com/v3/buy-button.js">
+    </script>
+
+    <stripe-buy-button
+        buy-button-id="buy_btn_1Riq5pAkVHx5lEPjFZk6hH7S"
+        publishable-key="pk_live_KOhP2QcexFYv9jB1jbxYnR3r"
+    >
+    </stripe-buy-button>
 </div>
