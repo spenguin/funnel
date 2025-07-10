@@ -8,7 +8,7 @@ class CustomersModel extends Model
 {
     protected $table = 'customers';
 
-    protected $allowedFields = ['name', 'email'];
+    protected $allowedFields = ['name', 'email', 'token'];
 
     public function getCustomerByEmail($email = NULL)
     {

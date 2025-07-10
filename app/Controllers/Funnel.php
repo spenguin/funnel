@@ -77,12 +77,17 @@ class Funnel extends BaseController
         // Save input
         // Create Customer if new; else return existing
         $customer = $this->_mcustomers->getCustomerByEmail( $input['email'] );
+        
         if( is_null( $customer ) )
         {
             $customer = new $this->_mcustomers();
+            $input['token'] = md5(microtime());
             $customer->save($input);
+            $token  = $input['token'];
+        } else {
+            $token  = $customer['token'];
         }
-
+        
         // Trigger first email sent
 
         $campaign_email = $this->_mcampaign_emails->getCampaignEmail($campaign['id'], 1 );
@@ -100,7 +105,7 @@ class Funnel extends BaseController
 
         // We need to record that the email went out
         
-        return redirect()->to( site_url() . 'special-offer/' . $slug );
+        return redirect()->to( site_url() . 'special-offer/' . $slug . '?token=' . $token );
     }
 
     /**
