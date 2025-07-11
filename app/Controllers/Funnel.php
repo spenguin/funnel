@@ -136,7 +136,6 @@ class Funnel extends BaseController
             'title'         => $campaign['name'],
             'heading'       => '<h1>Meanwhile... The Best</h1>
             <h2>Get <soan class="shout">25%</span> off cover price!</h2>
-            <p><em>Plus free shipping</em></p>
             <p>For £1 now!</p>',
             'token'         => $token
         ];        
@@ -225,18 +224,33 @@ class Funnel extends BaseController
     {
         $params = $this->_request->getGet(); 
 
-        $customer   = $this->_mcustomers->getCustomerByToken( $param['utm_source'] );
+        $customer   = $this->_mcustomers->getCustomerByToken( $params['utm_source'] );
+        $campaign   = $this->_mcampaigns->getCampaign( $params['utm_campaign'] );
 
         $campaign_customer = new $this->_mcampaign_customer();
 
         $input  = [
-            'campaign_id'   => $param['utm_campaign'],
+            'campaign_id'   => $params['utm_campaign'],
             'customer_id'   => $customer['id'],
-            'paid'          => time(),
+            'paid'          => date('Y-m-d H:i:s'),
             'campaign_email_sent'   => 1,
-            'campaign_email_sent_date'  => now()
+            'campaign_email_sent_date'  => date('Y-m-d H:i:s')
         ];
         $campaign_customer->save($input);
+
+        $data   = [
+            '_controller'   => 'funnel', 
+            'slug'          => strtolower($campaign['slug']),
+            'description'   => $campaign['description'],
+            'title'         => $campaign['name'],
+            'heading'       => '<h1>Meanwhile... The Best</h1>
+            <h2>Thank you so much for your support.</h2>
+            <p>The campaign will start shortly; and we will, of course, let you know</p>',
+            // 'token'         => $token
+        ];        
+        echo view( 'campaigns/' . $campaign['id'] . '/header', $data );
+        echo view( 'campaigns/common/paymentmade', $data );
+        echo view( 'campaigns/' . $campaign['id'] . '/footer', $data );        
 
     }
 
