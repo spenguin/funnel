@@ -90,6 +90,8 @@ $routes->delete('campaigns/(:num)', 'Campaigns::destroy/$i' );
 $routes->get('preview/(:any)', 'Funnel::preview/$1' );
 $routes->post('preview/(:any)', 'Funnel::signup/$1' );
 $routes->get('special-offer/(:any)', 'Funnel::special_offer/$1' );
+$routes->post('special-offer/(:any)', 'Funnel::special_offer_taken/$1' );
+$routes->get('payment-successful', 'Funnel::payment_successful' );
 
 // $routes->post('admin', 'Admin::store' );
 // $routes->get('admin/(:num)', 'Admin::show/$1' );

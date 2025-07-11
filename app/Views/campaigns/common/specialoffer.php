@@ -20,7 +20,19 @@
     <p>But you need to act fast. As soon as the campaign starts, this special offer will no longer be available.</p>
 </div>
 <div class="payment">
-    <script async
+    <div class="form">
+        <form action="<?php echo base_url();?>/special-offer/<?php echo $this->data['slug']; ?>" method="post">
+            <?php if( empty($token) ): ?>
+                <label for="name">Name: <input type="text" name="name" required/></label>
+                <label for="email">Email: <input type="email" name="email" required/></label>
+            <?php else: ?>
+                <input type="hidden" name="token" value="<?php echo $token; ?>" />
+            <?php endif; ?>
+            <input type="submit" name="submit" value="I'm sold" />
+        </form>
+    </div>
+
+    <!-- <script async
         src="https://js.stripe.com/v3/buy-button.js">
     </script>
 
@@ -28,5 +40,5 @@
         buy-button-id="buy_btn_1Riq5pAkVHx5lEPjFZk6hH7S"
         publishable-key="pk_live_KOhP2QcexFYv9jB1jbxYnR3r"
     >
-    </stripe-buy-button>
+    </stripe-buy-button> -->
 </div>

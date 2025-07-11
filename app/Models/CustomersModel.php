@@ -17,6 +17,15 @@ class CustomersModel extends Model
         }
     
         return $this->where(['email'=>$email])->first();
-    }     
+    } 
+    
+    public function getCustomerByToken($token = NULL)
+    {
+        if (is_null($token) ) {
+            return NULL;
+        }
+    
+        return $this->where(['token'=>$token])->first();        
+    }
 
 }

@@ -14,7 +14,8 @@ class Funnel extends BaseController
     {
         $this->_mcampaigns = model(CampaignsModel::class);
         $this->_mcustomers = model(CustomersModel::class);
-        $this->_mcampaign_emails = model(CampaignEmailsModel::class);
+        $this->_mcampaign_emails    = model(CampaignEmailsModel::class);
+        $this->_mcampaign_customer  = model(CampaignCustomersModel::class);
         $this->_request = \Config\Services::request();
 		$this->_validation	= service('validation');
     }
@@ -104,6 +105,7 @@ class Funnel extends BaseController
         }
 
         // We need to record that the email went out
+
         
         return redirect()->to( site_url() . 'special-offer/' . $slug . '?token=' . $token );
     }
@@ -122,9 +124,10 @@ class Funnel extends BaseController
         {
             throw new \CodeIgniter\Exceptions\PageNotFoundException($slug);
         }
-        if( isset($_REQUEST['token'] ) )
+        $token  = isset( $_REQUEST['token'] ) ? $_REQUEST['token'] : '';
+        if( !empty($token) )
         {
-
+            $customer   = $this->_mcustomers->getCustomerByToken($token);
         }
         $data   = [
             '_controller'   => 'funnel', 
@@ -134,7 +137,8 @@ class Funnel extends BaseController
             'heading'       => '<h1>Meanwhile... The Best</h1>
             <h2>Get <soan class="shout">25%</span> off cover price!</h2>
             <p><em>Plus free shipping</em></p>
-            <p>For £1 now!</p>'
+            <p>For £1 now!</p>',
+            'token'         => $token
         ];        
         echo view( 'campaigns/' . $campaign['id'] . '/header', $data );
         echo view( 'campaigns/common/specialoffer', $data );
@@ -187,6 +191,53 @@ class Funnel extends BaseController
         }else{
             echo 'Message has been sent';
         }
-    }    
+    }   
+    
+    function special_offer_taken($slug = NULL)
+    {
+        if( is_null( $slug ) )
+        {
+            exit( 'Campaign slug is required' );
+        }
+
+        $campaign = $this->_mcampaigns->getCampaignBySlug($slug);
+        
+        $input = $this->_request->getPost();
+
+        if( isset($input['token'] ) )
+        {
+            try {
+                $customer = $this->_mcustomers->getCustomerByToken($input['token']);
+            } catch (\Exception $e) {
+                exit('Token not valid');
+            }
+        } else {
+            $customer = new $this->_mcustomers();
+            $input['token'] = md5(microtime());
+            $customer->save($input);
+        } 
+        $env = getenv('CI_ENVIRONMENT');
+        return redirect()->to( getenv('stripe_buynow_link.' . $env) . '?utm_source=' . $input['token'] . '&utm_campaign=' . $campaign['id'] );
+            
+    }
+
+    public function payment_successful()
+    {
+        $params = $this->_request->getGet(); 
+
+        $customer   = $this->_mcustomers->getCustomerByToken( $param['utm_source'] );
+
+        $campaign_customer = new $this->_mcampaign_customer();
+
+        $input  = [
+            'campaign_id'   => $param['utm_campaign'],
+            'customer_id'   => $customer['id'],
+            'paid'          => time(),
+            'campaign_email_sent'   => 1,
+            'campaign_email_sent_date'  => now()
+        ];
+        $campaign_customer->save($input);
+
+    }
 
 }
