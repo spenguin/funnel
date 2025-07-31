@@ -1,4 +1,6 @@
 /** Global settings */
+@import url("https://fonts.cdnfonts.com/css/norwester");
+@import url("https://fonts.cdnfonts.com/css/alegreya-sans");
 *,
 *::before,
 *::after {
@@ -18,6 +20,11 @@ body {
 
 /** Variables for site */
 /** Breakpoints */
+/** Fonts styles */
+body {
+  font-family: "Alegreya Sans", sans-serif;
+}
+
 /** 	Mixins */
 /**
 Function to wrap appropriate media query around content
@@ -51,6 +58,19 @@ form input[type=submit] {
 }
 
 /** Headings styles */
+h1, h2, h3, h4, h5 {
+  font-family: "Norwester", serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.55rem;
+  font-style: italic;
+}
+
 h3 {
   text-align: center;
   font-size: 2rem;
@@ -71,6 +91,9 @@ h3 {
   .header__wrapper {
     flex-direction: row;
   }
+}
+.header__text {
+  font-size: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .header__text {
@@ -107,6 +130,15 @@ h3 {
   .quote {
     width: 30%;
   }
+}
+.quote__image {
+  width: 200px;
+  height: 200px;
+}
+.quote__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 .quote p {
   font-size: 1.35rem;
@@ -170,6 +202,21 @@ h3 {
 }
 .book__title {
   font-weight: 600;
+}
+
+/** Creators styling */
+.creators {
+  padding: 0 5%;
+  max-width: 1280px;
+  font-size: 1.35rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .creators {
+    margin: 0 auto;
+    padding: 0 2.5% 2rem 2.5% !important;
+    border-bottom: 1px solid black;
+  }
 }
 
 /*# sourceMappingURL=preview.css.map */

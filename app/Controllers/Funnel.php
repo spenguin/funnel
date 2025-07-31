@@ -41,7 +41,7 @@ class Funnel extends BaseController
             'title'         => $campaign['name'],
             'heading'       => '<h1>Meanwhile... The Best</h1>
             <h2>Lo, the possibilities of comics storytelling</h2>
-            <p>A curated selection of stories from the first 15 volumes of the critically-acclaimed comics anthology</p>'
+            <p>A curated selection of stories from the first 12 volumes of the critically-acclaimed comics anthology</p>'
         ];
         echo view( 'campaigns/' . $campaign['id'] . '/header', $data );
         echo view( 'campaigns/common/landingpage', $data );

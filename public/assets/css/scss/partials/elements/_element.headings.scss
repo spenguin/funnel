@@ -1,5 +1,16 @@
 /** Headings styles */
 
+h1, h2, h3, h4, h5 {
+    font-family: $header-family;
+}
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.55rem;
+    font-style: italic;
+}
 
 h3 {
     text-align: center;

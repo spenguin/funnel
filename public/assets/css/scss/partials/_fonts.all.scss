@@ -1,0 +1,18 @@
+/** Fonts styles */
+
+// @font-face {
+//     font-family: "Lemon-Tuesday";
+//     src: url("assets/fonts/Lemon-Tuesday.woff") format("woff");
+//       // url("assets/fonts/Bellefair-Regular.woff") format("woff");
+//     font-weight: 400;
+//     font-style: normal;
+//   }
+@import url('https://fonts.cdnfonts.com/css/norwester');  
+@import url('https://fonts.cdnfonts.com/css/alegreya-sans');
+
+$font-family: "Alegreya Sans", sans-serif;
+$header-family: "Norwester", serif;
+  
+body {
+    font-family: $font-family;
+}
