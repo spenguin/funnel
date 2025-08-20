@@ -1,0 +1,38 @@
+[23-Dec-2024 06:39:04 UTC] PHP Warning:  require(/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:04 UTC] PHP Warning:  require(/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:04 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:12 UTC] PHP Warning:  require(/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:12 UTC] PHP Warning:  require(/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:32 UTC] PHP Warning:  require(/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:32 UTC] PHP Warning:  require(/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:38 UTC] PHP Warning:  require(/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:38 UTC] PHP Warning:  require(/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[23-Dec-2024 06:39:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/weird734/funnel.dev.weirdspace.xyz/public/../app/Config/Paths.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/weird734/funnel.dev.weirdspace.xyz/public/index.php on line 22
+[07-Jan-2025 14:46:05 America/Chicago] PHP Fatal error:  Declaration of App\Models\UserModel::validate() must be compatible with CodeIgniter\BaseModel::validate($data): bool in /home/weird734/funnel.dev.weirdspace.xyz/app/Models/UserModel.php on line 23
+[07-Jan-2025 14:50:07 America/Chicago] PHP Fatal error:  Declaration of App\Models\UserModel::validate() must be compatible with CodeIgniter\BaseModel::validate($data): bool in /home/weird734/funnel.dev.weirdspace.xyz/app/Models/UserModel.php on line 23
+[09-Jan-2025 21:44:42 UTC] PHP Fatal error:  Uncaught InvalidArgumentException: .env values containing spaces must be surrounded by quotes. in /home/weird734/funnel.dev.weirdspace.xyz/vendor/codeigniter4/framework/system/Config/DotEnv.php:172
+Stack trace:
+#0 /home/weird734/funnel.dev.weirdspace.xyz/vendor/codeigniter4/framework/system/Config/DotEnv.php(122): CodeIgniter\Config\DotEnv->sanitizeValue()
+#1 /home/weird734/funnel.dev.weirdspace.xyz/vendor/codeigniter4/framework/system/Config/DotEnv.php(75): CodeIgniter\Config\DotEnv->normaliseVariable()
+#2 /home/weird734/funnel.dev.weirdspace.xyz/vendor/codeigniter4/framework/system/Config/DotEnv.php(43): CodeIgniter\Config\DotEnv->parse()
+#3 /home/weird734/funnel.dev.weirdspace.xyz/vendor/codeigniter4/framework/system/bootstrap.php(130): CodeIgniter\Config\DotEnv->load()
+#4 /home/weird734/funnel.dev.weirdspace.xyz/public/index.php(28): require('/home/weird734/...')
+#5 {main}
+  thrown in /home/weird734/funnel.dev.weirdspace.xyz/vendor/codeigniter4/framework/system/Config/DotEnv.php on line 172
+[14-Jan-2025 14:54:16 America/Chicago] PHP Fatal error:  Cannot declare class App\Database\Seeds\SimpleSeeder, because the name is already in use in /home/weird734/funnel.dev.weirdspace.xyz/app/Database/Seeds/UserSeeder.php on line 0
+[29-Mar-2025 16:43:00 America/Chicago] PHP Fatal error:  Cannot declare class App\Database\Migrations\CreateCampaigns, because the name is already in use in /home/weird734/funnel.dev.weirdspace.xyz/app/Database/Migrations/2025-03-29-300000_CreateEmailTypes.php on line 0
+[08-Jul-2025 17:19:14 America/Chicago] PHP Fatal error:  Cannot declare class App\Controllers\Funnel, because the name is already in use in /home/weird734/funnel.dev.weirdspace.xyz/app/Controllers/PaymentGateway.php on line 0
