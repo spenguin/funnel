@@ -1,0 +1,29 @@
+<h2><?php echo esc($title); ?><h2>
+<p><a href="/emails/create">Create New Email</a></p>
+<table>
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>Campaign</td>
+            <td>Email Type</td>
+            <td>Subject</td>
+        </tr>
+    </thead>
+    <tbody>
+        <?php 
+            if( !empty($emails) && is_array($emails)):
+                foreach( $emails as $email )
+                { ?>
+                    <tr>
+                        <td><?php echo $email['id']; ?></td>
+                        <td><?php echo $email['campaign_id']; ?></td>
+                        <td><?php echo $email['email_type_id']; ?></td>
+                        <td><?php echo $email['subject']; ?></td>
+                    </tr>
+                    <?php    
+                }
+            else: ?>
+                <h3>No Emails</h3>
+            <?php endif; ?>
+    </tbody>
+</table>
