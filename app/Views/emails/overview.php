@@ -12,13 +12,14 @@
     <tbody>
         <?php 
             if( !empty($emails) && is_array($emails)):
-                foreach( $emails as $email )
+                foreach( $emails as $key => $email )
                 { ?>
                     <tr>
-                        <td><?php echo $email['id']; ?></td>
-                        <td><?php echo $email['campaign_id']; ?></td>
-                        <td><?php echo $email['email_type_id']; ?></td>
+                        <td><a href="/emails/<?php echo $email['id']; ?>"><?php echo $email['id']; ?></a></td>
+                        <td><?php echo $campaigns[$email['campaign_id']]; ?></td>
+                        <td><?php echo $email_types[$email['email_type_id']]; ?></td>
                         <td><?php echo $email['subject']; ?></td>
+                        <td><a href="/emails/delete/<?php echo $key; ?>">X</a></td>
                     </tr>
                     <?php    
                 }
