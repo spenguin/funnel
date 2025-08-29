@@ -59,6 +59,7 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 
 $routes->get('/login', 'Auth::index' );
 $routes->post('/login', 'Auth::index' );
+$routes->get('/logout', 'Auth::logout' );
 $routes->get('news/(:segment)', 'News::view/$1');
 $routes->get('news', 'News::index');
 $routes->get('/migrate/status', 'Migrate::status' );
