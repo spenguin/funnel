@@ -32,7 +32,7 @@ class UserModel extends Model
 
             $this->session->set('name',$user['name']);
             $this->session->set('logged', TRUE );
-            $this->session->set('userId', $user['id'] );
+            $this->session->set('loggedUserId', $user['id'] );
 
             return TRUE;
 

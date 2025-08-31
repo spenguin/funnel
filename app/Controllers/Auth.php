@@ -52,7 +52,7 @@ class Auth extends BaseController
     {
         unset( $_SESSION['logged'] );
         unset( $_SESSION['name'] );
-        unset( $_SESSION['userId'] );
+        unset( $_SESSION['loggedUserId'] );
         
         return redirect()->to( site_url() );
     }

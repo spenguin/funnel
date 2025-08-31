@@ -11,10 +11,6 @@ class Admin extends BaseController
 {
     public function __construct()
     {
-        if( !isset($_session['logged'] ) ) {
-            
-            return redirect()->to( site_url() . 'login' ); 
-        } 
         $this->_mcampaigns = model(CampaignsModel::class);
         $this->_request = \Config\Services::request();
 		$this->_validation	= service('validation');

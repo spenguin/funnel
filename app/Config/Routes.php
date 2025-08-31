@@ -57,6 +57,12 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 
+$routes->group('',['filter' => 'AlreadyLoggedIn'], function ($routes) {
+    $routes->get( 'campaigns', 'Campaigns::index' );
+    $routes->get( 'emails', 'Emails::index' );
+    $routes->get('admin', 'Admin::index' );
+});
+
 $routes->get('/login', 'Auth::index' );
 $routes->post('/login', 'Auth::index' );
 $routes->get('/logout', 'Auth::logout' );
