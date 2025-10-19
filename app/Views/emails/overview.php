@@ -1,6 +1,6 @@
-<h2><?php echo esc($title); ?><h2>
+<h2><?php echo esc($title); ?></h2>
 <p><a href="/emails/create">Create New Email</a></p>
-<table>
+<table style="width:1000px;" >
     <thead>
         <tr>
             <td>id</td>
@@ -11,8 +11,8 @@
     </thead>
     <tbody>
         <?php 
-            if( !empty($emails) && is_array($emails)):
-                foreach( $emails as $key => $email )
+            if( !empty($campaign_emails) && is_array($campaign_emails)):
+                foreach( $campaign_emails as $key => $email )
                 { ?>
                     <tr>
                         <td><a href="/emails/<?php echo $email['id']; ?>"><?php echo $email['id']; ?></a></td>

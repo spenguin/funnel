@@ -33,13 +33,6 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-
-// $routes->get('/landing', 'Funnel::index' );
-
-// $routes->get('/admintools/migrate', 'Admintools::migrate');
-// $routes->get('/admintools', 'Admintools::index' );
-// $routes->get('/login', 'Gateway::index' );
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing
@@ -53,9 +46,12 @@ $routes->get('/', 'Home::index');
  * You will have access to the $routes object within that file without
  * needing to reload it.
  */
-if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
+if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) { 
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+
+// $routes->addRedirect('/meanwhile-the-best', '/preview/meanwhile-the-best');
+
 
 $routes->group('',['filter' => 'AlreadyLoggedIn'], function ($routes) {
     $routes->get( 'campaigns', 'Campaigns::index' );
@@ -66,8 +62,7 @@ $routes->group('',['filter' => 'AlreadyLoggedIn'], function ($routes) {
 $routes->get('/login', 'Auth::index' );
 $routes->post('/login', 'Auth::index' );
 $routes->get('/logout', 'Auth::logout' );
-$routes->get('news/(:segment)', 'News::view/$1');
-$routes->get('news', 'News::index');
+
 $routes->get('/migrate/status', 'Migrate::status' );
 $routes->get('/migrate/seed/(:segment)', 'Migrate::seed/$1');
 $routes->get('/migrate/seed', 'Migrate::seed');
@@ -78,10 +73,6 @@ $routes->get('/migrate', 'Migrate::index' );
 $routes->get('admin', 'Admin::index' );
 
 // Payment Gateway
-// $routes->get('donate', 'PaymentController::donate');
-// $routes->post('stripe/payment', 'PaymentController::payment');
-// $routes->get('stripe/payment-success/', 'PaymentController::payment_success');
-// $routes->get('stripe/payment-cancel', 'PaymentController::payment_cancel');
 $routes->post('payment', 'PaymentGateway::payment');
 
 // Campaigns
@@ -110,18 +101,6 @@ $routes->post('emails/(:num)', 'Emails::update/$1' );
 $routes->delete('emails/(:num)', 'Emails::destroy/$i' );
 
 // Email Cron Job
-$routes->get('emails', 'Emails::daily' );
-
-// $routes->post('admin', 'Admin::store' );
-// $routes->get('admin/(:num)', 'Admin::show/$1' );
-// $routes->post('admin/(:num)', 'Admin::update/$1' );
-// $routes->delete('client/(:num)', 'Admin/destroy/$1' );
-
-
-// $routes->get('/admin/edit/(:num)', 'Admin::edit/$1' );
-// $routes->post('/admin/edit/(:num)', 'Admin::edit/$1' );
-// $routes->get('/admin/edit', 'Admin::edit' );
-// $routes->post('admin/edit', 'Admin::edit' );
-
+$routes->get('emails/daily', 'Emails::daily' );
 
 $routes->get('(:any)', 'Pages::view/$1');

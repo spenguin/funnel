@@ -1,26 +1,16 @@
 <?php
 
-
-
 namespace App\Models;
-
-
 
 use CodeIgniter\Model;
 
-
-
 class CampaignEmailsModel extends Model
-
 {
-
     protected $table = 'campaign_emails';
 
+    protected $allowedFields = ['email_type_id', 'campaign_id', 'subject', 'body'];
 
-
-    protected $allowedFields = ['email_type_id', 'campaign_id'];
-
-    public function getEmail($id = null)
+    public function getCampaignEmail($id = null)
     {
         if (is_null($id)) 
         {
@@ -30,9 +20,7 @@ class CampaignEmailsModel extends Model
         return $this->where(['id' => $id])->first();
     }
 
-
-
-    public function getCampaignEmail($campaignId = NULL, $emailTypeId = NULL)
+    public function getCampaignEmailByCampaignId_EmailTypeId($campaignId = NULL, $emailTypeId = NULL)
     {
         if (is_null($campaignId) || is_null($emailTypeId) ) {
             return NULL;
