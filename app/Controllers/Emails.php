@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CampaignCustomersModel;
 use Exception;
 use Config\Email; 
 
@@ -129,7 +130,7 @@ class Emails extends BaseController
                 if( $email_type['paid_status'] == $paid_status )
                 {
                     // Get the email by type and by campaign
-                    $campaign_email = $this->_mcampaign_emails->getCampaignEmailByCampaignId_EmailTypeId( $campaign_customer['campaign_id'],  $email_type['id'] );
+                    $campaign_email = $this->_mcampaign_emails->getCampaignEmailByCampaignId_EmailTypeId( $campaign_customer['campaign_id'],  $email_type['id'] ); //var_dump($campaign_email);
                     $campaign       = $this->_mcampaigns->getCampaign($campaign_customer['campaign_id'] );
 
                     $customer = $this->_mcustomers->getCustomer($campaign_customer['customer_id']);
@@ -146,7 +147,13 @@ class Emails extends BaseController
                     } 
                     
                     // Update the Campaign Email
-
+                    $update_campaign_customer = new CampaignCustomersModel();
+                    $data   = [
+                        'id'                    => $campaign_customer['id'],
+                        'campaign_email_sent'   => $email_type['id'],
+                        'campaign_email_sent_date'  => time()
+                    ];
+                    $update_campaign_customer->save($data);
                 }
 
             }
