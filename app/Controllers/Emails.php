@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use Exception;
+use Config\Email; 
+
 class Emails extends BaseController
 {
 
@@ -126,7 +129,24 @@ class Emails extends BaseController
                 if( $email_type['paid_status'] == $paid_status )
                 {
                     // Get the email by type and by campaign
-                    // $campaign_customer['campaign_id'] $email_type['id']
+                    $campaign_email = $this->_mcampaign_emails->getCampaignEmailByCampaignId_EmailTypeId( $campaign_customer['campaign_id'],  $email_type['id'] );
+                    $campaign       = $this->_mcampaigns->getCampaign($campaign_customer['campaign_id'] );
+
+                    $customer = $this->_mcustomers->getCustomer($campaign_customer['customer_id']);
+                    
+                    $email  = new Email();
+
+                    $to     = $customer['email'];
+                    $subject= sprintf($campaign_email['subject'], $campaign['name'] );
+                    $body   = $campaign_email['body'];
+
+                    if( !$email->sendEmail($to, $subject, $body) )
+                    {
+                        die( "Something went wrong with sending the email. Please try again!");
+                    } 
+                    
+                    // Update the Campaign Email
+
                 }
 
             }
