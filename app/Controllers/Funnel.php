@@ -97,7 +97,7 @@ class Funnel extends BaseController
  
         $to = $input['email']; //'weirdspace'; 
         $subject = sprintf($campaign_email['subject'], $campaign['name']); //'Your Preview of ' . $campaign['name'] . ', as requested'; 
-        $body = sprintf($campaign_email['body'], $campaign['name'], $campaign['sample_url']); //'<h1>This is a test email</h1>'; 
+        $body = $campaign_email['body']; //sprintf($campaign_email['body'], $campaign['name'], $campaign['sample_url']); //'<h1>This is a test email</h1>'; 
 
         if( !$email->sendEmail($to, $subject, $body) )
         {
