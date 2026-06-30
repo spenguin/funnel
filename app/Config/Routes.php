@@ -72,35 +72,35 @@ $routes->get('/migrate', 'Migrate::index' );
 // Desktop
 $routes->get('admin', 'Admin::index' );
 
-// Payment Gateway
-$routes->post('payment', 'PaymentGateway::payment');
+// // Payment Gateway
+// $routes->post('payment', 'PaymentGateway::payment');
 
-// Campaigns
-$routes->get('campaigns', 'Campaigns::index' );
-// $routes->get('campaigns/create', 'Campaigns::create' );
-$routes->get('campaigns/create', 'Campaigns::edit' );
-$routes->post('campaigns', 'Campaigns::store' );
-// $routes->get('campaigns/(:num)', 'Campaigns::show/$1' );
-$routes->get('campaigns/(:num)', 'Campaigns::edit/$1' );
-$routes->post('campaigns/(:num)', 'Campaigns::update/$1' );
-$routes->delete('campaigns/(:num)', 'Campaigns::destroy/$i' );
+// // Campaigns
+// $routes->get('campaigns', 'Campaigns::index' );
+// // $routes->get('campaigns/create', 'Campaigns::create' );
+// $routes->get('campaigns/create', 'Campaigns::edit' );
+// $routes->post('campaigns', 'Campaigns::store' );
+// // $routes->get('campaigns/(:num)', 'Campaigns::show/$1' );
+// $routes->get('campaigns/(:num)', 'Campaigns::edit/$1' );
+// $routes->post('campaigns/(:num)', 'Campaigns::update/$1' );
+// $routes->delete('campaigns/(:num)', 'Campaigns::destroy/$i' );
 
-$routes->get('preview/(:any)', 'Funnel::preview/$1' );
-$routes->post('preview/(:any)', 'Funnel::signup/$1' );
-$routes->get('special-offer/(:any)', 'Funnel::special_offer/$1' );
-$routes->post('special-offer/(:any)', 'Funnel::special_offer_taken/$1' );
-$routes->get('payment-successful', 'Funnel::payment_successful' );
+// $routes->get('preview/(:any)', 'Funnel::preview/$1' );
+// $routes->post('preview/(:any)', 'Funnel::signup/$1' );
+// $routes->get('special-offer/(:any)', 'Funnel::special_offer/$1' );
+// $routes->post('special-offer/(:any)', 'Funnel::special_offer_taken/$1' );
+// $routes->get('payment-successful', 'Funnel::payment_successful' );
 
-// Emails
-$routes->get('emails', 'Emails::index' );
-$routes->get('emails/create', 'Emails::edit' );
-$routes->post('emails', 'Emails::store' );
-// $routes->get('campaigns/(:num)', 'Campaigns::show/$1' );
-$routes->get('emails/(:num)', 'Emails::edit/$1' );
-$routes->post('emails/(:num)', 'Emails::update/$1' );
-$routes->delete('emails/(:num)', 'Emails::destroy/$i' );
+// // Emails
+// $routes->get('emails', 'Emails::index' );
+// $routes->get('emails/create', 'Emails::edit' );
+// $routes->post('emails', 'Emails::store' );
+// // $routes->get('campaigns/(:num)', 'Campaigns::show/$1' );
+// $routes->get('emails/(:num)', 'Emails::edit/$1' );
+// $routes->post('emails/(:num)', 'Emails::update/$1' );
+// $routes->delete('emails/(:num)', 'Emails::destroy/$i' );
 
-// Email Cron Job
-$routes->get('emails/daily', 'Emails::daily' );
+// // Email Cron Job
+// $routes->get('emails/daily', 'Emails::daily' );
 
-$routes->get('(:any)', 'Pages::view/$1');
+// $routes->get('(:any)', 'Pages::view/$1');
