@@ -10,6 +10,8 @@ class Auth extends BaseController
     public function __construct()
     {
         $this->_request = \Config\Services::request();
+        $this->_session = \Config\Services::session(); 
+
 		$this->_validation	= service('validation');
 		// $this->muser	    = model( 'UserModel' );  
         $this->_muser       = model(UserModel::class);
@@ -50,9 +52,9 @@ class Auth extends BaseController
 
     public function logout()
     {
-        unset( $_SESSION['logged'] );
-        unset( $_SESSION['name'] );
-        unset( $_SESSION['loggedUserId'] );
+        $this->_session->remove('logged');    
+        $this->_session->remove('name');    
+        $this->_session->remove('loggedUserId');    
         
         return redirect()->to( site_url() );
     }

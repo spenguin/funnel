@@ -21,15 +21,16 @@ class Admin extends BaseController
      * @return Response
      */
     public function index()
-    { //die(var_dump(session()));
-        $data = [
-            'campaigns' => $this->_mcampaigns->getCampaign(),
-            'title'     => 'Campaigns'
-        ];
+    { 
+        // $data = [
+        //     'campaigns' => $this->_mcampaigns->getCampaign(),
+        //     'title'     => 'Campaigns'
+        // ];
         
-        echo view( 'templates/header', $data );
-        echo view( 'admin/overview', $data );
-        echo view( 'templates/footer', $data );
+        // echo view( 'templates/header', $data );
+        // echo view( 'admin/overview', $data );
+        // echo view( 'templates/footer', $data );
+        return view('desktop');
     }
 
     /**
