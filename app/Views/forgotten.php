@@ -3,20 +3,17 @@
 
 <!-- Inject the title section -->
 <?= $this->section('page-title') ?>
-    Login
+    Forgotten your password?
 <?= $this->endSection() ?>
 
 <!-- Inject the navigation section -->
 <?php echo $this->section('form'); ?>
-    <form action="/login" method="post">
-        <label for="username">Username:</label>
+    <form action="/forgotten" method="post">
+        <label for="username">Username or Email:</label>
         <input type="text" name="username" required>
         <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required>
-        <br>
-        <button type="submit" name="submit" value="submit">Login</button>
-        <p><a href="/forgotten">Forgotten your password?</a></p>
+        <button type="submit">Submit</button>
+        <p><a href="/login">Return to Login</a></p>
     </form>
 <?php echo $this->endSection(); ?>
 

@@ -56,12 +56,19 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 $routes->group('',['filter' => 'AlreadyLoggedIn'], function ($routes) {
     $routes->get( 'campaigns', 'Campaigns::index' );
     $routes->get( 'emails', 'Emails::index' );
-    $routes->get('admin', 'Admin::index' );
+    $routes->get('dashboard', 'Dashboard::index' );
 });
 
-$routes->get('/login', 'Auth::index' );
-$routes->post('/login', 'Auth::index' );
-$routes->get('/logout', 'Auth::logout' );
+$routes->get('/login', 'Login::index' );
+$routes->post('/login', 'Login::index' );
+$routes->get('/logout', 'Login::logout' );
+$routes->get( '/forgotten', 'Login::forgotten' );
+$routes->post( '/forgotten', 'Login::forgotten' );
+
+
+// $routes->get('/login', 'Auth::index' );
+// $routes->post('/login', 'Auth::index' );
+// $routes->get('/logout', 'Auth::logout' );
 
 $routes->get('/migrate/status', 'Migrate::status' );
 $routes->get('/migrate/seed/(:segment)', 'Migrate::seed/$1');
