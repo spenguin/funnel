@@ -54,7 +54,7 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 
 
 $routes->group('',['filter' => 'AlreadyLoggedIn'], function ($routes) {
-    $routes->get( 'campaigns', 'Campaigns::index' );
+    $routes->get( 'campaigns', 'admin\Campaigns::index' );
     $routes->get( 'emails', 'Emails::index' );
     $routes->get('dashboard', 'Dashboard::index' );
 });
@@ -77,13 +77,13 @@ $routes->get('/migrate/rollback', 'Migrate::rollback');
 $routes->get('/migrate', 'Migrate::index' );
 
 // Desktop
-$routes->get('admin', 'Admin::index' );
+// $routes->get('admin', 'Admin::index' );
 
 // // Payment Gateway
 // $routes->post('payment', 'PaymentGateway::payment');
 
 // // Campaigns
-// $routes->get('campaigns', 'Campaigns::index' );
+// $routes->get('campaigns', 'Admin\Campaigns::index' );
 // // $routes->get('campaigns/create', 'Campaigns::create' );
 // $routes->get('campaigns/create', 'Campaigns::edit' );
 // $routes->post('campaigns', 'Campaigns::store' );

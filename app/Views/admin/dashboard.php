@@ -27,12 +27,17 @@
         {
             switch ($title)
             {
-                case 'desktop':
+                case 'campaign':
                     ?>
                     <h1>Campaign control</h1>
                     <p>This is where you create or maintain Campaigns</p>
                     <?php
-                    var_dump($campaigns);
+                    break;
+                case 'dashboard':
+                    ?>
+                    <h1>Dashboard</h1>
+                    <p>This is the Dashboard</p>
+                    <?php
                     break;
             }
         }
