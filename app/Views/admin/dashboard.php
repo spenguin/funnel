@@ -10,13 +10,8 @@
 <?php echo $this->section('navigation'); ?>
     <nav>
         <a href="<?= base_url('/') ?>">Home</a> | 
-        <a href="<?= base_url('/about') ?>">About</a> |
-        <?php $session = session(); ?>
-        <?php if( is_null($session->logged) ): ?>
-            <a href="<?= base_url('/login') ?>">Login</a>
-        <?php else: ?>
-            <a href="<?= base_url('/logout') ?>">Logout</a>
-        <?php endif; ?>
+        <a href="<?= base_url('/campaigns') ?>">Campaigns</a> |
+        <a href="<?= base_url('/logout') ?>">Logout</a>
     </nav>
 <?php echo $this->endSection(); ?>
 

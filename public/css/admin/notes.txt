@@ -1,0 +1,2 @@
+cd "J:\Weirdspace\Projects\Funnel\build\public\css\admin"
+sass --watch main.scss:style.css

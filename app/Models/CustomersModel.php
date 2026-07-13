@@ -6,36 +6,8 @@ use CodeIgniter\Model;
 
 class CustomersModel extends Model
 {
-    protected $table = 'customers';
+    protected $table            = 'Customers';
 
-    protected $allowedFields = ['name', 'email', 'token'];
-
-    public function getCustomer($id = false)
-    {
-
-        if ($id === false) {
-            return $this->findAll();
-        }
-
-        return $this->where(['id' => $id])->first();
-    }  
-
-    public function getCustomerByEmail($email = NULL)
-    {
-        if (is_null($email) ) {
-            return NULL;
-        }
     
-        return $this->where(['email'=>$email])->first();
-    } 
-    
-    public function getCustomerByToken($token = NULL)
-    {
-        if (is_null($token) ) {
-            return NULL;
-        }
-    
-        return $this->where(['token'=>$token])->first();        
-    }
 
 }

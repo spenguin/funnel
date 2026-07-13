@@ -15,6 +15,7 @@ class Campaigns extends BaseController
     {
         $this->_mcampaigns  = model(CampaignsModel::class);
         $this->_memail_types= model(EmailTypesModel::class);
+        $this->_mcampaign_customers = model(CampaignCustomersModel::class);
         // $this->_mcampaign_email_type = model(CampaignEmailTypesModel::class);
         $this->_request     = \Config\Services::request();
 		$this->_validation	= service('validation');
@@ -27,12 +28,10 @@ class Campaigns extends BaseController
     {
         $data = [
             'campaigns' => $this->_mcampaigns->getCampaign(),
+            'campaignCustomers' => $this->_mcampaign_customers->getCustomerGroupedByCampaign(),
             'title'     => 'Campaigns'
         ];
-        
-        // echo view( 'templates/header', $data );
-        // echo view( 'campaigns/overview', $data );
-        // echo view( 'templates/footer', $data );  
+
         return view('admin/campaigns', $data );      
     }
 

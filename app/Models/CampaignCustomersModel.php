@@ -18,7 +18,7 @@ class CampaignCustomersModel extends Model
 
     /**
      * Get Customers by Campaign Email Id, and date
-     * Return array
+     * @return array
      */
     public function getCustomersByEmailTypeAndDateGrouped($emailTypeId = NULL, $delay = NULL )
     {
@@ -30,6 +30,22 @@ class CampaignCustomersModel extends Model
             ->groupBy('campaign_id')
             ->findAll();
 
+    }
+
+    /**
+     * Get Customers grouped by Campaign Id
+     * @return array
+     */
+    public function getCustomerGroupedByCampaign()
+    {
+        $customers  = $this->findAll();
+        $o          = [];
+        foreach( $customers as $customer )
+        {
+            $o[$customer['campaign_id']]    = $customer;
+        }    
+
+        return $o;
     }
 
 }
