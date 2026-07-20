@@ -35,5 +35,42 @@ class Campaigns extends BaseController
         return view('admin/campaigns', $data );      
     }
 
+    /**
+     * Display Campaign Details
+     */
+    public function details( $campaignId = NULL )
+    {
+        if( is_null($campaignId) ) return redirect()->to( site_url() . 'campaign' );
+
+        $data   = [];
+
+        $data['campaign']   = $this->_mcampaigns->getCampaign($campaignId);
+        $data['customers']  = $this->_mcampaign_customers->getCampaignCustomers($campaignId);
+
+        return view( 'admin/campaigns/details', $data );
+    }
+
+    public function create()
+    {
+        if( $this->_request->getPost('submit') )
+        {
+            $data = $this->_request->getPost();
+            $this->_validation->setRule( 'name', 'Name', 'trim|required' );
+
+            if( ! $this->_validation->run($data) )
+            {
+                // Provide error messages
+            }
+            else
+            {
+                // Create new Campaign
+
+                // Create Landing Page
+            }
+        }
+        $data   = [];
+        return view( 'admin/campaigns/create', $data );
+    }
+
 
 }

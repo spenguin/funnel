@@ -48,4 +48,19 @@ class CampaignCustomersModel extends Model
         return $o;
     }
 
+    /**
+     * Get Customers by Campaign Id
+     * @return array
+     */
+    public function getCampaignCustomers($campaignId = NULL)
+    {
+        if(is_null($campaignId))
+        {
+            return $this->findAll();
+        } 
+        
+        return $this->where(['campaign_id' => $campaignId] )->findAll();
+       
+    }
+
 }

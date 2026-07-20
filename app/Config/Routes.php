@@ -55,6 +55,13 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 
 $routes->group('',['filter' => 'AlreadyLoggedIn'], function ($routes) {
     $routes->get( 'campaigns', 'admin\Campaigns::index' );
+    $routes->get( 'campaigns/details/(:num)', 'admin\Campaigns::details/$1' );
+    $routes->get( 'campaigns/create', 'admin\Campaigns::create' );
+    $routes->post( 'campaigns/create', 'admin\Campaigns::create' );
+
+    $routes->get( 'files/edit/(:num)', 'admin\Files::edit/$1' );
+    $routes->get( 'files/edit/(:num)/(:num)', 'admin\Files::edit/$1/$2' );
+
     $routes->get( 'emails', 'Emails::index' );
     $routes->get('dashboard', 'Dashboard::index' );
 });
