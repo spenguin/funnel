@@ -34,4 +34,9 @@ class Files extends BaseController
         return view( 'admin/files/edit', $data);
     }
 
+    /**
+     * Display File 
+     * sha1(rand());
+     */
+
 }

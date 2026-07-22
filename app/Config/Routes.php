@@ -99,7 +99,7 @@ $routes->get('/migrate', 'Migrate::index' );
 // $routes->post('campaigns/(:num)', 'Campaigns::update/$1' );
 // $routes->delete('campaigns/(:num)', 'Campaigns::destroy/$i' );
 
-// $routes->get('preview/(:any)', 'Funnel::preview/$1' );
+$routes->get('preview/(:any)', 'Funnel::preview/$1' );
 // $routes->post('preview/(:any)', 'Funnel::signup/$1' );
 // $routes->get('special-offer/(:any)', 'Funnel::special_offer/$1' );
 // $routes->post('special-offer/(:any)', 'Funnel::special_offer_taken/$1' );
@@ -117,4 +117,4 @@ $routes->get('/migrate', 'Migrate::index' );
 // // Email Cron Job
 // $routes->get('emails/daily', 'Emails::daily' );
 
-// $routes->get('(:any)', 'Pages::view/$1');
+$routes->get('(:any)', 'Funnel::routing/$1');
