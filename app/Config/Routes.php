@@ -59,6 +59,7 @@ $routes->group('',['filter' => 'AlreadyLoggedIn'], function ($routes) {
     $routes->get( 'campaigns/create', 'admin\Campaigns::create' );
     $routes->post( 'campaigns/create', 'admin\Campaigns::create' );
 
+    $routes->get( 'files/view/(:any)', 'admin\Files::displayFile/$1' );
     $routes->get( 'files/edit/(:num)', 'admin\Files::edit/$1' );
     $routes->get( 'files/edit/(:num)/(:num)', 'admin\Files::edit/$1/$2' );
 

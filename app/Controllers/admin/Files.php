@@ -36,7 +36,28 @@ class Files extends BaseController
 
     /**
      * Display File 
-     * sha1(rand());
+     * @param (str) file name
      */
+    public function displayFile( $fileName )
+    {
+        $filePath = WRITEPATH . 'files/' . $fileName;
+
+        if( !file_exists( $filePath ) )
+        {
+            throw  new \CodeIgniter\Exceptions\PageNotFoundException("File not found.");
+        }
+
+        $data['body']   = file_get_contents($filePath);
+
+        return view( 'admin/files/display', $data );
+
+    //     $file       = new \CodeIgniter\Files\File($filePath);
+    //     $mimeType   = $file->getMimeType();
+        
+    //     return $this->response
+    //         ->setStatusCode(200)
+    //         ->setContentType($mimeType)
+    //         ->setBody(file_get_contents($filePath));        
+    }
 
 }
