@@ -6,7 +6,7 @@ use App\Models\CampaignCustomersModel;
 use Exception;
 use Config\Email; 
 
-class Emails extends BaseController
+class X_Emails extends BaseController
 {
 
     // var $_funnelName;

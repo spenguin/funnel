@@ -8,6 +8,7 @@ use App\Models\CampaignsModel;
 use CodeIgniter\HTTP\Response;
 use CodeIgniter\HTTP\ResponseInterface;
 use Exception;
+use Config\Email;
 
 class Files extends BaseController
 {
@@ -47,7 +48,8 @@ class Files extends BaseController
             throw  new \CodeIgniter\Exceptions\PageNotFoundException("File not found.");
         }
 
-        $data['body']   = file_get_contents($filePath);
+        $data['body']       = file_get_contents($filePath);
+        $data['fileName']   = $fileName;
 
         return view( 'admin/files/display', $data );
 
@@ -58,6 +60,32 @@ class Files extends BaseController
     //         ->setStatusCode(200)
     //         ->setContentType($mimeType)
     //         ->setBody(file_get_contents($filePath));        
+    }
+
+    /**
+     * Send test email to provided email address
+     * @param (str) filename
+     */
+    public function sendTest( $fileName )
+    {
+        $filePath = WRITEPATH . 'files/' . $fileName;
+
+        if( !file_exists( $filePath ) )
+        {
+            throw  new \CodeIgniter\Exceptions\PageNotFoundException("File not found.");
+        }   
+        
+        $input = $this->_request->getPost(); 
+        $email = new Email(); 
+
+        $to         = $input['testEmail'];
+        $subject    = "Test email";
+        $body       = file_get_contents($filePath);
+
+        if( !$email->sendEmail($to, $subject, $body) )
+        {
+            return "Something went wrong with sending the email. Please try again!";
+        }        
     }
 
 }

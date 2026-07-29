@@ -3,7 +3,7 @@
 
 <!-- Inject the title section -->
 <?= $this->section('title') ?>
-    Dashboard
+    Create Email
 <?= $this->endSection() ?>
 
 <!-- Inject the navigation section -->
@@ -18,27 +18,15 @@
 
 <!-- Inject the content section -->
 <?= $this->section('content') ?>
-    <?php 
-        if( isset($title) )
-        {
-            switch ($title)
-            {
-                case 'campaign':
-                    ?>
-                    <h1>Campaign control</h1>
-                    <p>This is where you create or maintain Campaigns</p>
-                    <?php
-                    break;
-                case 'dashboard':
-                    ?>
-                    <h1>Dashboard</h1>
-                    <p>This is the Dashboard</p>
-                    <?php
-                    break;
-            }
-        }
-    ?>
-
-
-
+    <form method="post" action="/emails/create" style="width: 600px;margin: 0 auto;">
+        <label for="emailSubject">Email Subject:</label>
+        <input type="text" name="emailSubject" /><br>
+        <label for="campaign">Campaign:</label>
+        <select name="campaign">
+            <option value=0>All Customers</option>
+        </select><br>
+        <label for="emailBody">Email Body:</label>
+        <textarea name="emailBody" required style="height: 700px;"></textarea>
+        <input type="submit" name="submit" value="Create Email" />
+    </form>
 <?= $this->endSection() ?>

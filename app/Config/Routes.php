@@ -62,8 +62,12 @@ $routes->group('',['filter' => 'AlreadyLoggedIn'], function ($routes) {
     $routes->get( 'files/view/(:any)', 'admin\Files::displayFile/$1' );
     $routes->get( 'files/edit/(:num)', 'admin\Files::edit/$1' );
     $routes->get( 'files/edit/(:num)/(:num)', 'admin\Files::edit/$1/$2' );
+    $routes->post( 'files/sendTest/(:any)', 'admin\Files::sendTest/$1' );
 
-    $routes->get( 'emails', 'Emails::index' );
+    $routes->get( 'emails', 'admin/Emails::index' );
+    $routes->get( 'emails/create', 'admin/Emails::create' );
+    $routes->post( 'emails/create', 'admin/Emails::create' );
+
     $routes->get('dashboard', 'Dashboard::index' );
 });
 
@@ -107,6 +111,7 @@ $routes->get('preview/(:any)', 'Funnel::preview/$1' );
 // $routes->get('payment-successful', 'Funnel::payment_successful' );
 
 // // Emails
+$routes->get( 'emails/sendEmail:(num)', 'admin\Emails::sendEmail/$1' );
 // $routes->get('emails', 'Emails::index' );
 // $routes->get('emails/create', 'Emails::edit' );
 // $routes->post('emails', 'Emails::store' );

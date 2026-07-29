@@ -20,5 +20,10 @@
 <?php echo $this->section('content'); ?>
     <div style="width: 600px; margin:0 auto;" ?>
     	<?php echo $body; ?>
+        <form method="post" action="/files/sendTest/<?php echo $fileName; ?>">
+            <label for="testEmail">Test email address:</label>
+            <input type="email" name="testEmail" required />
+            <input type="submit" name="submit" value="Send Test Email" />
+        </form>
     </div>
 <?php echo $this->endSection(); ?>
