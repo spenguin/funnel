@@ -43,11 +43,18 @@
 <tr>
 <td width="100%" class="m_-8119845293768638308container" style="padding:5px 15px 20px 15px">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="margin-top:10px" bgcolor="">
-<tbody>
-<tr>
-<td width="100%" style="text-decoration:none;padding:5px 0px 15px;line-height:1.25;font-weight:bold;font-style:normal;font-size:16px;font-family:Lato,&quot;Trebuchet MS&quot;,sans-serif" class="m_-8119845293768638308container m_-8119845293768638308text-block"><h1 style="margin-top:0px;margin-bottom:0px;color:rgb(49,54,56);font-size:26px;text-align:center"><span style="font-size:26px">First email from the new system!</span></h1></td>
-</tr>
-</tbody>
+    <tbody>
+        <tr>
+            <td width="100%" style="text-decoration:none;padding:5px 0px 15px;line-height:1.25;font-weight:bold;font-style:normal;font-size:16px;font-family:Lato,&quot;Trebuchet MS&quot;,sans-serif" class="m_-8119845293768638308container m_-8119845293768638308text-block"><h1 style="margin-top:0px;margin-bottom:0px;color:rgb(49,54,56);font-size:26px;text-align:center"><span style="font-size:26px">First email from the new system!</span></h1></td>
+        </tr>
+        <tr>
+            <td width="100%" style="text-decoration:none;padding:5px 0px 15px;line-height:1.25;font-weight:normal;font-style:normal;font-size:14px;font-family:Lato,&quot;Trebuchet MS&quot;,sans-serif">
+            <p>Hello {{Name}}</p>
+            <p>Sorry for the long silence. I wasn't happy with any of the email services available, so I deciced to build my own. It took me a bit longer than I'd like but I've got something working now.</p>
+            <p>I'll get more regular emails out from this point on, to tell you all about Meanwhile... The Best, Meanwhile... the quarterly anthology, and other titles coming up.</p>
+            </td>
+        </tr>
+    </tbody>
 </table>
 </td>
 </tr>

@@ -111,7 +111,7 @@ $routes->get('preview/(:any)', 'Funnel::preview/$1' );
 // $routes->get('payment-successful', 'Funnel::payment_successful' );
 
 // // Emails
-$routes->get( 'emails/sendEmail:(num)', 'admin\Emails::sendEmail/$1' );
+$routes->get( 'emails/sendEmail/(:num)', 'admin\Emails::sendEmail/$1' );
 // $routes->get('emails', 'Emails::index' );
 // $routes->get('emails/create', 'Emails::edit' );
 // $routes->post('emails', 'Emails::store' );

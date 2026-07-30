@@ -95,15 +95,39 @@ class Emails extends BaseController
             throw  new \CodeIgniter\Exceptions\PageNotFoundException("File not found.");
         }
 
-        $email  = $this->_mfiles->getFileByFileId( $emailId );
+        $emailFile  = $this->_mfiles->getFileByFileId( $emailId );
 
-        if( is_null( $email ) )
+        if( is_null( $emailFile ) )
         {
             throw  new \CodeIgniter\Exceptions\PageNotFoundException("File not found.");
         }
 
-        // Send to all Customers
-        $customers  = $this->_mcustomers->findAll(); die(var_dump($customers));
+        $filePath = WRITEPATH . 'files/' . $emailFile['name'];
+
+        if( !file_exists( $filePath ) )
+        {
+            throw  new \CodeIgniter\Exceptions\PageNotFoundException("File not found.");
+        }
         
+        
+        // Send to all Customers
+        $customers  = $this->_mcustomers->findAll(); 
+
+        $subject    = $this->_mfile_meta->getMetaValueByFileIdAndMetaName( $emailId, 'Subject' ); 
+        $body       = file_get_contents($filePath); 
+
+        
+        $email = new Email();
+
+        foreach( $customers as $customer )
+        {
+            $customerBody   = str_ireplace( '{{Name}}', $customer['name'], $body );
+            if( !$email->sendEmail( $customer['email'], $subject['meta_value'], $customerBody) )
+            {
+                return "Something went wrong with sending the email. Please try again!";
+            }
+        }
+
+        return redirect()->to( site_url() . 'emails' );
     }
 }

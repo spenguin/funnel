@@ -10,4 +10,9 @@ class FileMetaModel extends Model
 
     protected $allowedFields = ['file_id', 'meta_name', 'meta_value'];
 
+    public function getMetaValueByFileIdAndMetaName( $fileId, $metaName )
+    {
+        return $this->where(['file_id'=>$fileId,'meta_name'=>$metaName])->first();
+    }
+
 }

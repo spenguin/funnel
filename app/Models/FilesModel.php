@@ -25,4 +25,13 @@ class FilesModel extends Model
         return $this->where(['file_type_id' => $fileTypeId])->findAll();
     }
 
+    public function getFileByFileId( $fileId = NULL )
+    {
+        // if (is_null( $fileId )) {    // This should be treated as an error
+        //     return $this->findAll();
+        // }
+    
+        return $this->where(['id' => $fileId])->first();
+    }    
+
 }
