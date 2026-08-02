@@ -59,7 +59,7 @@ $routes->group('',['filter' => 'AlreadyLoggedIn'], function ($routes) {
     $routes->get( 'campaigns/create', 'admin\Campaigns::create' );
     $routes->post( 'campaigns/create', 'admin\Campaigns::create' );
 
-    $routes->get( 'files/view/(:any)', 'admin\Files::displayFile/$1' );
+    $routes->get( 'files/view/(:any)', 'admin\Files::view/$1' );
     $routes->get( 'files/edit/(:num)', 'admin\Files::edit/$1' );
     $routes->get( 'files/edit/(:num)/(:num)', 'admin\Files::edit/$1/$2' );
     $routes->post( 'files/sendTest/(:any)', 'admin\Files::sendTest/$1' );
@@ -105,7 +105,7 @@ $routes->get('/migrate', 'Migrate::index' );
 // $routes->delete('campaigns/(:num)', 'Campaigns::destroy/$i' );
 
 $routes->get('preview/(:any)', 'Funnel::preview/$1' );
-// $routes->post('preview/(:any)', 'Funnel::signup/$1' );
+$routes->post('preview/(:any)', 'Funnel::signup/$1' );
 // $routes->get('special-offer/(:any)', 'Funnel::special_offer/$1' );
 // $routes->post('special-offer/(:any)', 'Funnel::special_offer_taken/$1' );
 // $routes->get('payment-successful', 'Funnel::payment_successful' );

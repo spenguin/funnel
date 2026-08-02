@@ -18,12 +18,19 @@
 <?php echo $this->endSection(); ?>
 
 <?php echo $this->section('content'); ?>
-    <div style="width: 600px; margin:0 auto;" ?>
+	<?php
+		if( $file['file_type_id'] == 5 ): ?>
+    		<div style="width: 600px; margin:0 auto;" ?>
+	<?php else: ?>
+			<div>
+	<?php endif; ?>
     	<?php echo $body; ?>
-        <form method="post" action="/files/sendTest/<?php echo $fileName; ?>">
-            <label for="testEmail">Test email address:</label>
-            <input type="email" name="testEmail" required />
-            <input type="submit" name="submit" value="Send Test Email" />
-        </form>
+		<?php if( $file['file_type_id'] == 5 ): ?>
+			<form method="post" action="/files/sendTest/<?php echo $file['name']; ?>">
+				<label for="testEmail">Test email address:</label>
+				<input type="email" name="testEmail" required />
+				<input type="submit" name="submit" value="Send Test Email" />
+			</form>
+		<?php endif; ?>
     </div>
 <?php echo $this->endSection(); ?>

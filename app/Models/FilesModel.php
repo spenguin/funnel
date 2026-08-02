@@ -32,6 +32,11 @@ class FilesModel extends Model
         // }
     
         return $this->where(['id' => $fileId])->first();
-    }    
+    } 
+    
+    public function getFileByName( $name )
+    {
+        return $this->where(['name' => $name])->first();
+    }
 
 }

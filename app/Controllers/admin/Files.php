@@ -17,6 +17,7 @@ class Files extends BaseController
         $this->_mcampaigns  = model(CampaignsModel::class);
         $this->_memail_types= model(EmailTypesModel::class);
         $this->_mcampaign_customers = model(CampaignCustomersModel::class);
+        $this->_mfiles      = model(FilesModel::class);
         // $this->_mcampaign_email_type = model(CampaignEmailTypesModel::class);
         $this->_request     = \Config\Services::request();
 		$this->_validation	= service('validation');
@@ -39,7 +40,7 @@ class Files extends BaseController
      * Display File 
      * @param (str) file name
      */
-    public function displayFile( $fileName )
+    public function view( $fileName )
     {
         $filePath = WRITEPATH . 'files/' . $fileName;
 
@@ -48,10 +49,11 @@ class Files extends BaseController
             throw  new \CodeIgniter\Exceptions\PageNotFoundException("File not found.");
         }
 
+        $file   = $this->_mfiles->getFileByName( $fileName );
+        $data['file']       = $file;
         $data['body']       = file_get_contents($filePath);
-        $data['fileName']   = $fileName;
 
-        return view( 'admin/files/display', $data );
+        return view( 'admin/files/view', $data );
 
     //     $file       = new \CodeIgniter\Files\File($filePath);
     //     $mimeType   = $file->getMimeType();

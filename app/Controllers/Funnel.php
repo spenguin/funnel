@@ -71,4 +71,68 @@ class Funnel extends BaseController
 
     }
 
+    
+    /**
+     * Handles the Post data from someone signing up to see the Preview
+     */
+    public function signup($slug=NULL)
+    {
+        if(is_null($slug))
+        {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($slug);
+        }
+        $campaign   = $this->_mcampaigns->getCampaignBySlug($slug);
+        if( is_null($campaign))
+        {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($slug);
+        }
+        
+        $this->_validation->setRule( 'name', 'Name', 'trim|required' );
+        $this->_validation->setRule( 'email', 'Email', 'trim|required' );
+
+        $input = $this->_request->getPost(); 
+
+        if (!$this->_validation->run($input)) {
+            return $this
+                ->getResponse(
+                    $this->validator->getErrors(),
+                    ResponseInterface::HTTP_BAD_REQUEST
+                );
+        } 
+        // Save input
+        // Create Customer if new; else return existing
+        $customer = $this->_mcustomers->getCustomerByEmail( $input['email'] );
+        
+        if( is_null( $customer ) )
+        {
+            $customer = new $this->_mcustomers();
+            $input['token'] = md5(microtime());
+            $customer->save($input);
+            $token  = $input['token'];
+        } else {
+            $token  = $customer['token'];
+        }
+        
+        // Trigger first email sent
+
+        $campaign_email = $this->_mcampaign_emails->getCampaignEmail($campaign['id'], 1 );
+
+        $email = new Email(); 
+ 
+        $to = $input['email']; //'weirdspace'; 
+        $subject = sprintf($campaign_email['subject'], $campaign['name']); //'Your Preview of ' . $campaign['name'] . ', as requested'; 
+        $body = $campaign_email['body']; //sprintf($campaign_email['body'], $campaign['name'], $campaign['sample_url']); //'<h1>This is a test email</h1>'; 
+
+        if( !$email->sendEmail($to, $subject, $body) )
+        {
+            return "Something went wrong with sending the email. Please try again!";
+        }
+
+        // We need to record that the email went out
+
+        
+        return redirect()->to( site_url() . 'special-offer/' . $slug . '?token=' . $token );
+    }
+
+
 }
