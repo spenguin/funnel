@@ -112,7 +112,7 @@ copy!”</p>
     <h3>What do you think?</h3>
     <!-- <p> Want to give us your email address and we'll give you a preview? And we'll let you know when the campaign is about to launch.</p> -->
     <p>Want to see the Advanced Reader Preview? Fill in the form below.</p>
-    <form action="meanwhile-the-best" method="post">
+    <form action="https://funnel.dev.weirdspace.xyz/preview/meanwhile-the-best" method="post">
         <label for="name">Name: <input type="text" name="name" required/></label>
         <label for="email">Email: <input type="email" name="email" required/></label>
         <input type="submit" name="submit" value="I'd like to see it" />

@@ -106,9 +106,10 @@ $routes->get('/migrate', 'Migrate::index' );
 
 $routes->get('preview/(:any)', 'Funnel::preview/$1' );
 $routes->post('preview/(:any)', 'Funnel::signup/$1' );
-// $routes->get('special-offer/(:any)', 'Funnel::special_offer/$1' );
-// $routes->post('special-offer/(:any)', 'Funnel::special_offer_taken/$1' );
-// $routes->get('payment-successful', 'Funnel::payment_successful' );
+$routes->get('special-offer/(:any)', 'Funnel::special_offer/$1' );
+$routes->post('special-offer/(:any)', 'Funnel::special_offer_taken/$1' );
+$routes->get('payment-successful', 'Funnel::payment_successful' );
+
 
 // // Emails
 $routes->get( 'emails/sendEmail/(:num)', 'admin\Emails::sendEmail/$1' );

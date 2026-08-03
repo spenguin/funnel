@@ -39,4 +39,9 @@ class FilesModel extends Model
         return $this->where(['name' => $name])->first();
     }
 
+    public function getNextFileByCampaignIdAndFileId( $campaignId, $fileId )
+    {
+        return $this->where( ['campaign_id'=>$campaignId, 'preceding_file_id'=>$fileId])->first();
+    }
+
 }

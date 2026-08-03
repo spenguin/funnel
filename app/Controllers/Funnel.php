@@ -14,9 +14,10 @@ class Funnel extends BaseController
     {
         $this->_mcampaigns  = model(CampaignsModel::class);
         $this->_mcustomers  = model(CustomersModel::class);
-        $this->_mcampaign_emails    = model(CampaignEmailsModel::class);
+        // $this->_mcampaign_emails    = model(CampaignEmailsModel::class);
         $this->_mcampaign_customer  = model(CampaignCustomersModel::class);
         $this->_mfiles      = model(FilesModel::class);
+        $this->_mfile_meta  = model(FileMetaModel::class);
         $this->_request = \Config\Services::request();
 		$this->_validation	= service('validation');
     }
@@ -115,23 +116,90 @@ class Funnel extends BaseController
         
         // Trigger first email sent
 
-        $campaign_email = $this->_mcampaign_emails->getCampaignEmail($campaign['id'], 1 );
+        $emailFile = $this->_mfiles->getNextFileByCampaignIdAndFileId( $campaign['id'], 1 ); 
+
+
+        $filePath = WRITEPATH . 'files/' . $emailFile['name'];
+
+        if( !file_exists( $filePath ) )
+        {
+            throw  new \CodeIgniter\Exceptions\PageNotFoundException("File not found.");
+        }
+        
+        $subject    = $this->_mfile_meta->getMetaValueByFileIdAndMetaName( $emailFile['id'], 'Subject' ); 
+        $body       = file_get_contents($filePath); 
+        
 
         $email = new Email(); 
  
-        $to = $input['email']; //'weirdspace'; 
-        $subject = sprintf($campaign_email['subject'], $campaign['name']); //'Your Preview of ' . $campaign['name'] . ', as requested'; 
-        $body = $campaign_email['body']; //sprintf($campaign_email['body'], $campaign['name'], $campaign['sample_url']); //'<h1>This is a test email</h1>'; 
+        $to    = $input['email']; //'weirdspace'; 
 
-        if( !$email->sendEmail($to, $subject, $body) )
+        if( !$email->sendEmail($to, $subject['meta_value'], $body) )
         {
             return "Something went wrong with sending the email. Please try again!";
         }
 
         // We need to record that the email went out
 
+        // Find out what the next Campaign step is
+        $nextStep = $this->_mfiles->getNextFileByCampaignIdAndFileId( $campaign['id'], $emailFile['id'] ); die(var_dump($nextStep) );
+
+        if( $nextStep['file_type_id'] == 3 ) return redirect()->to( site_url() . 'special-offer/' . $slug . '?token=' . $token );
+
+        if( $nextStep['file_type_id'] == 4 ) return redirect()->to( site_url() . 'thank-you/' . $slug );
+       
+    }
+
+    public function special_offer( $slug )
+    {
+        if(is_null($slug))
+        {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($slug);
+        }
+        $campaign   = $this->_mcampaigns->getCampaignBySlug($slug);
+
+        $token      = $this->_request->getGet('token');
+        $customer   = $this->_mcustomers->getCustomerByToken( $token );
+
+
+        if( is_null($campaign))
+        {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($slug);
+        }
         
-        return redirect()->to( site_url() . 'special-offer/' . $slug . '?token=' . $token );
+        $fileData    = $this->_mfiles->getFileByCampaignIdFileType( $campaign['id'], 3 );
+
+        $filePath   = WRITEPATH . 'files/' . $fileData['name'];
+
+        if( !file_exists( $filePath ) )
+        {
+            throw  new \CodeIgniter\Exceptions\PageNotFoundException("File not found.");
+        } 
+        
+        $file       = new \CodeIgniter\Files\File($filePath);
+        $mimeType   = $file->getMimeType();
+        $body       = file_get_contents($filePath);
+        $body       = str_replace( '{{title}}', $campaign['name'], $body );
+
+        if( is_null( $customer ) )
+        {
+            $formContent = '<label for="name">Name: <input type="text" name="name" required/></label>
+            <label for="email">Email: <input type="email" name="email" required/></label>';
+
+        } else {
+
+            $formContent = '<input type="hidden" name="token" value="' . $token . '" />';
+
+        }
+
+        $body       = str_replace( '{{formContent}}', $formContent, $body );
+        
+        return $this->response
+            ->setStatusCode(200)
+            ->setContentType($mimeType)
+            ->setBody($body);        
+
+
     }
 
 

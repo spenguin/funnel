@@ -1,97 +1,56 @@
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width:600px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Meanwhile... The Best</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="stylesheet" href=" https://offers.soaringpenguinpress.com/assets/css/preview.css">
+	<link rel="stylesheet" href=" https://offers.soaringpenguinpress.com/meanwhile-the-best/css/meanwhile-the-best.css">
+</head>
+<body class="funnel meanwhile-the-best">
+	<header>
 
-<tbody>
-<tr>
-<td class="m_-8119845293768638308container" style="background-color:#ffffff" bgcolor="#ffffff">
-<table role="presentation" width="100%">
-<tbody>
-<tr>
-<td class="m_-8119845293768638308container">
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" bgcolor="">
-<tbody>
-<tr>
-<td style="padding:0 15px 0 15px">
-<table role="presentation" border="0" class="m_-8119845293768638308container" align="center" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:10px;margin-top:10px" bgcolor="">
-<tbody>
-<tr>
-<td align="center" style="border-collapse:collapse;border-spacing:0;margin:0;padding:0" valign="top">
-<a href="https://www.soaringpenguinpress.com" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.soaringpenguinpress.com&amp;source=gmail&amp;ust=1785016703535000&amp;usg=AOvVaw3tljUutIcJRWc-wb39PfUu">
-<img width="159" alt="Soaring Penguin Press logo" style="width:159px;max-width:100%;object-fit:cover;padding:0px;outline:none;border:none;display:block" src="https://ci3.googleusercontent.com/meips/ADKq_NY-jUiUaXJiPwZyrJL7fTGZpRGFCE_DiY_ROz9MIdWnR-VgqFxQsY1bxhFxLehhPTdWQhpM6nWqLYMjUX-jynO7HiWEBaxvmaAL0BGdFtOYjAAEzeXAMwef2-ziPjnWmf9LEc16VDfvkWxZRSW6q7VeXnlegeR8-_tHrLaIWcXpW1lc0dj2Ay8pYumlk6W3Fp49lExp1a_k75K2ip_lMk4q=s0-d-e1-ft#https://gallery.eousercontent.com/7fcaaf0c-f738-11f0-865a-8dab261aff48%2F1769064476241-soaring%20penguin%20press%20logo%20for%20amazon.jpg" class="CToWUd" data-bit="iit">
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
+	</header>
+	<div class="container"><header class="header">
+    <div class="header__wrapper">
+        <div class="header__text">
+            <h1>Meanwhile... The Best</h1>
+            <h2>Get <span class="shout">25%</span> off cover price!</h2>
+            <p>For £1 now!</p>
+        </div>
+        <div class="header__image">
+            <img src="https://funnel.dev.weirdspace.xyz/assets/img/meanwhilethebestcover-3d.png" />
+        </div>
+    </div>
+</header>
+<div class="explanation">
+    <h3>What I'm trying to do</h3>
+    <p>Until the campaign begins, we have a special offer for you: for a small deposit now, you'll be able to get {{title}} at 25% off the cover price! And we'll post it out to you for free!</p>
 
-<tr bgcolor="#ffffff" style="background-color:#ffffff">
-<td class="m_-8119845293768638308container">
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" bgcolor="">
-<tbody>
-<tr>
-<td style="padding:0px">
-<table role="presentation" border="0" class="m_-8119845293768638308container" align="center" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:0px;margin-top:0px" bgcolor="">
-<tbody>
-<tr>
-<td align="center" style="border-collapse:collapse;border-spacing:0;margin:0;padding:0" valign="top">
-<img src="https://ci3.googleusercontent.com/meips/ADKq_NYQjbWnQjXtHs_LGmO-8UEZe0rtmEBmrSGZO8psA-ur9dntWDwiYWd23n0BbSpBn7KrtW1a2APvg_N6DDOUlFHeZqAxWIs972gbeHAEmik9cvwYfHNnERHHgppOIkN821g4p0l9pyCqfZ8a_LecO8G_cvH42E9Ni0NscwGLy3KOog=s0-d-e1-ft#https://gallery.eomail5.com/7fcaaf0c-f738-11f0-865a-8dab261aff48%2F019e4e65-568c-7a93-88da-1c75005ece98.png" width="600" alt="" style="width:100%;max-width:100%;object-fit:cover;padding:0;outline:none;border:none;display:block" class="CToWUd a6T" data-bit="iit" tabindex="0"><div class="a6S" dir="ltr" style="opacity: 0.01; left: 911.5px; top: 998px;"><span data-is-tooltip-wrapper="true" class="a5q" jsaction="JIbuQc:.CLIENT"><button class="VYBDae-JX-I VYBDae-JX-I-ql-ay5-ays CgzRE" jscontroller="PIVayb" jsaction="click:h5M12e;clickmod:h5M12e;pointerdown:FEiYhc;pointerup:mF5Elf;pointerenter:EX0mI;pointerleave:vpvbp;pointercancel:xyn4sd;contextmenu:xexox;focus:h06R8; blur:zjh6rb;mlnRJb:fLiPzd;" data-idom-class="CgzRE" data-use-native-focus-logic="true" jsname="hRZeKc" aria-label="Download attachment " data-tooltip-enabled="true" data-tooltip-id="tt-c616" data-tooltip-classes="AZPksf" id="" jslog="91252; u014N:cOuCgd,Kr2w4b,xr6bB; 4:WyIjbXNnLWY6MTg3MTYzNTA3NDU0MjM3MjkxNyJd; 43:WyJpbWFnZS9qcGVnIl0."><span class="XjoK4b VYBDae-JX-UHGRz"></span><span class="UTNHae" jscontroller="LBaJxb" jsname="m9ZlFb" jsaction="QBlI0e:u4uo5d;BTifte:aV6zj;nqgE9d:f6959e;fHTtBd:ynrQde" soy-skip="" ssk="6:RWVI5c"></span><span class="VYBDae-JX-ank-Rtc0Jf" jsname="S5tZuc" aria-hidden="true"><span class="notranslate bzc-ank" aria-hidden="true"><svg viewBox="0 -960 960 960" height="20" width="20" focusable="false" class=" aoH"><path d="M480-336L288-528l51-51L444-474V-816h72v342L621-579l51,51L480-336ZM263.72-192Q234-192 213-213.15T192-264v-72h72v72H696v-72h72v72q0,29.7-21.16,50.85T695.96-192H263.72Z"></path></svg></span></span><div class="VYBDae-JX-ano"></div></button><div class="ne2Ple-oshW8e-J9" id="tt-c616" role="tooltip" aria-hidden="true">Download</div></span></div>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-<table role="presentation" border="0" class="m_-8119845293768638308container" align="center" cellpadding="0" cellspacing="0" style="margin-bottom:0px" bgcolor="" width="100%">
-<tbody>
-<tr>
-<td width="100%" class="m_-8119845293768638308container" style="padding:5px 15px 20px 15px">
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="margin-top:10px" bgcolor="">
-<tbody>
-<tr>
-<td width="100%" style="text-decoration:none;padding:5px 0px 15px;line-height:1.25;font-weight:bold;font-style:normal;font-size:16px;font-family:Lato,&quot;Trebuchet MS&quot;,sans-serif" class="m_-8119845293768638308container m_-8119845293768638308text-block"><h1 style="margin-top:0px;margin-bottom:0px;color:rgb(49,54,56);font-size:26px;text-align:center"><span style="font-size:26px">Your Advanced Reader Preview is here!</span></h1></td>
-</tr>
-</tbody>
-</table>
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" bgcolor="">
-<tbody>
-<tr>
-<td class="m_-8119845293768638308container" style="padding:5px 0px 20px">
-<div class="m_-8119845293768638308text-block" style="color:#313638;line-height:1.25;font-size:12px;font-family:Merriweather,&quot;DejaVu Serif&quot;,Georgia,serif"><div>Thanks for signing up. As promised, here’s the advanced reader preview for you to download and keep.</div><div><br></div><div><br></div></div>
-</td>
-</tr>
-</tbody>
-</table>
-<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="m_-8119845293768638308container" bgcolor="">
-<tbody><tr>
-<td valign="top" align="center" style="padding:0px 0px 10px">
-<table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse:separate!important;border-radius:3px;background-color:#0091d5;width:70%" class="m_-8119845293768638308eo-button" width="399" bgcolor="rgb(0, 145, 213)">
-<tbody>
-<tr>
-<td align="center" valign="middle">
-<a href="https://drive.google.com/file/d/1ihVmfy4XrDMrQ0fMKhVTFBxcUqE8jn2T/view?usp=sharing" style="font-weight:bold;font-size:18px;padding:18px;letter-spacing:-0.5px;line-height:100%;text-align:center;text-decoration:none;color:#ffffff;display:block" title="Download" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://drive.google.com/file/d/1ihVmfy4XrDMrQ0fMKhVTFBxcUqE8jn2T/view?usp%3Dsharing&amp;source=gmail&amp;ust=1785016703535000&amp;usg=AOvVaw2sAcAMgLjbf3O5ZNnVOjgf">Download</a>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody></table>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+    <p>But you need to act fast. As soon as the campaign starts, this special offer will no longer be available.</p>
+</div>
+
+</div>
+<!--  -->
+<div class="form">
+    <form action="https://funnel.dev.weirdspace.xyz/special-offer/meanwhile-the-best" method="post">
+
+        {{formContent}}
+
+        <input type="submit" name="submit" value="I'm sold" />
+        <p>Your Preview will appear in your inbox shortly. And I'll be telling you more about my plans for Meanwhile... in later emails.</p>
+    </form>
+</div></div><!-- end container -->
+
+<!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
+</div><!-- end container -->
+    <footer>
+        
+        <div class="copyrights">
+            <p>&copy; 2026 Weirdspace/Soaring Penguin Press</p>
+        </div>
+    </footer>
+</body>
+</html>

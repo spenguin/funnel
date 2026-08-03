@@ -9,11 +9,11 @@ class FileTypesSeeder extends Seeder
     public function run()
     {
         $data   = [
+            ['name' => 'Signup Page'],
             ['name' => 'Landing Page'],
-            ['name' => 'Signup Thank You Page'],
             ['name' => 'Pledge Page'],
-            ['name' => 'Pledge Thank You Page'],
-            ['name' => 'Email']
+            ['name' => 'Email'],
+            ['name' => 'Email Not Following']
         ];
         if (count($data) == count($data, COUNT_RECURSIVE)) 
         {
