@@ -1,97 +1,151 @@
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Simple Transactional Email</title>
+    <style media="all" type="text/css">
+@media all {
+  .btn-primary table td:hover {
+    background-color: #ec0867 !important;
+  }
 
-<tbody>
-<tr>
-<td class="m_-8119845293768638308container" style="background-color:#ffffff" bgcolor="#ffffff">
-<table role="presentation" width="100%">
-<tbody>
-<tr>
-<td class="m_-8119845293768638308container">
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" bgcolor="">
-<tbody>
-<tr>
-<td style="padding:0 15px 0 15px">
-<table role="presentation" border="0" class="m_-8119845293768638308container" align="center" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:10px;margin-top:10px" bgcolor="">
-<tbody>
-<tr>
-<td align="center" style="border-collapse:collapse;border-spacing:0;margin:0;padding:0" valign="top">
-<a href="https://www.soaringpenguinpress.com" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.soaringpenguinpress.com&amp;source=gmail&amp;ust=1785016703535000&amp;usg=AOvVaw3tljUutIcJRWc-wb39PfUu">
-<img width="159" alt="Soaring Penguin Press logo" style="width:159px;max-width:100%;object-fit:cover;padding:0px;outline:none;border:none;display:block" src="https://ci3.googleusercontent.com/meips/ADKq_NY-jUiUaXJiPwZyrJL7fTGZpRGFCE_DiY_ROz9MIdWnR-VgqFxQsY1bxhFxLehhPTdWQhpM6nWqLYMjUX-jynO7HiWEBaxvmaAL0BGdFtOYjAAEzeXAMwef2-ziPjnWmf9LEc16VDfvkWxZRSW6q7VeXnlegeR8-_tHrLaIWcXpW1lc0dj2Ay8pYumlk6W3Fp49lExp1a_k75K2ip_lMk4q=s0-d-e1-ft#https://gallery.eousercontent.com/7fcaaf0c-f738-11f0-865a-8dab261aff48%2F1769064476241-soaring%20penguin%20press%20logo%20for%20amazon.jpg" class="CToWUd" data-bit="iit">
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
+  .btn-primary a:hover {
+    background-color: #ec0867 !important;
+    border-color: #ec0867 !important;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .main p,
+.main td,
+.main span {
+    font-size: 16px !important;
+  }
 
-<tr bgcolor="#ffffff" style="background-color:#ffffff">
-<td class="m_-8119845293768638308container">
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" bgcolor="">
-<tbody>
-<tr>
-<td style="padding:0px">
-<table role="presentation" border="0" class="m_-8119845293768638308container" align="center" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:0px;margin-top:0px" bgcolor="">
-<tbody>
-<tr>
-<td align="center" style="border-collapse:collapse;border-spacing:0;margin:0;padding:0" valign="top">
-<img src="https://ci3.googleusercontent.com/meips/ADKq_NYQjbWnQjXtHs_LGmO-8UEZe0rtmEBmrSGZO8psA-ur9dntWDwiYWd23n0BbSpBn7KrtW1a2APvg_N6DDOUlFHeZqAxWIs972gbeHAEmik9cvwYfHNnERHHgppOIkN821g4p0l9pyCqfZ8a_LecO8G_cvH42E9Ni0NscwGLy3KOog=s0-d-e1-ft#https://gallery.eomail5.com/7fcaaf0c-f738-11f0-865a-8dab261aff48%2F019e4e65-568c-7a93-88da-1c75005ece98.png" width="600" alt="" style="width:100%;max-width:100%;object-fit:cover;padding:0;outline:none;border:none;display:block" class="CToWUd a6T" data-bit="iit" tabindex="0"><div class="a6S" dir="ltr" style="opacity: 0.01; left: 911.5px; top: 998px;"><span data-is-tooltip-wrapper="true" class="a5q" jsaction="JIbuQc:.CLIENT"><button class="VYBDae-JX-I VYBDae-JX-I-ql-ay5-ays CgzRE" jscontroller="PIVayb" jsaction="click:h5M12e;clickmod:h5M12e;pointerdown:FEiYhc;pointerup:mF5Elf;pointerenter:EX0mI;pointerleave:vpvbp;pointercancel:xyn4sd;contextmenu:xexox;focus:h06R8; blur:zjh6rb;mlnRJb:fLiPzd;" data-idom-class="CgzRE" data-use-native-focus-logic="true" jsname="hRZeKc" aria-label="Download attachment " data-tooltip-enabled="true" data-tooltip-id="tt-c616" data-tooltip-classes="AZPksf" id="" jslog="91252; u014N:cOuCgd,Kr2w4b,xr6bB; 4:WyIjbXNnLWY6MTg3MTYzNTA3NDU0MjM3MjkxNyJd; 43:WyJpbWFnZS9qcGVnIl0."><span class="XjoK4b VYBDae-JX-UHGRz"></span><span class="UTNHae" jscontroller="LBaJxb" jsname="m9ZlFb" jsaction="QBlI0e:u4uo5d;BTifte:aV6zj;nqgE9d:f6959e;fHTtBd:ynrQde" soy-skip="" ssk="6:RWVI5c"></span><span class="VYBDae-JX-ank-Rtc0Jf" jsname="S5tZuc" aria-hidden="true"><span class="notranslate bzc-ank" aria-hidden="true"><svg viewBox="0 -960 960 960" height="20" width="20" focusable="false" class=" aoH"><path d="M480-336L288-528l51-51L444-474V-816h72v342L621-579l51,51L480-336ZM263.72-192Q234-192 213-213.15T192-264v-72h72v72H696v-72h72v72q0,29.7-21.16,50.85T695.96-192H263.72Z"></path></svg></span></span><div class="VYBDae-JX-ano"></div></button><div class="ne2Ple-oshW8e-J9" id="tt-c616" role="tooltip" aria-hidden="true">Download</div></span></div>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-<table role="presentation" border="0" class="m_-8119845293768638308container" align="center" cellpadding="0" cellspacing="0" style="margin-bottom:0px" bgcolor="" width="100%">
-<tbody>
-<tr>
-<td width="100%" class="m_-8119845293768638308container" style="padding:5px 15px 20px 15px">
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="margin-top:10px" bgcolor="">
-<tbody>
-<tr>
-<td width="100%" style="text-decoration:none;padding:5px 0px 15px;line-height:1.25;font-weight:bold;font-style:normal;font-size:16px;font-family:Lato,&quot;Trebuchet MS&quot;,sans-serif" class="m_-8119845293768638308container m_-8119845293768638308text-block"><h1 style="margin-top:0px;margin-bottom:0px;color:rgb(49,54,56);font-size:26px;text-align:center"><span style="font-size:26px">Your Advanced Reader Preview is here!</span></h1></td>
-</tr>
-</tbody>
-</table>
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" bgcolor="">
-<tbody>
-<tr>
-<td class="m_-8119845293768638308container" style="padding:5px 0px 20px">
-<div class="m_-8119845293768638308text-block" style="color:#313638;line-height:1.25;font-size:12px;font-family:Merriweather,&quot;DejaVu Serif&quot;,Georgia,serif"><div>Thanks for signing up. As promised, here’s the advanced reader preview for you to download and keep.</div><div><br></div><div><br></div></div>
-</td>
-</tr>
-</tbody>
-</table>
-<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="m_-8119845293768638308container" bgcolor="">
-<tbody><tr>
-<td valign="top" align="center" style="padding:0px 0px 10px">
-<table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse:separate!important;border-radius:3px;background-color:#0091d5;width:70%" class="m_-8119845293768638308eo-button" width="399" bgcolor="rgb(0, 145, 213)">
-<tbody>
-<tr>
-<td align="center" valign="middle">
-<a href="https://drive.google.com/file/d/1ihVmfy4XrDMrQ0fMKhVTFBxcUqE8jn2T/view?usp=sharing" style="font-weight:bold;font-size:18px;padding:18px;letter-spacing:-0.5px;line-height:100%;text-align:center;text-decoration:none;color:#ffffff;display:block" title="Download" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://drive.google.com/file/d/1ihVmfy4XrDMrQ0fMKhVTFBxcUqE8jn2T/view?usp%3Dsharing&amp;source=gmail&amp;ust=1785016703535000&amp;usg=AOvVaw2sAcAMgLjbf3O5ZNnVOjgf">Download</a>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody></table>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+  .wrapper {
+    padding: 8px !important;
+  }
+
+  .content {
+    padding: 0 !important;
+  }
+
+  .container {
+    padding: 0 !important;
+    padding-top: 8px !important;
+    width: 100% !important;
+  }
+
+  .main {
+    border-left-width: 0 !important;
+    border-radius: 0 !important;
+    border-right-width: 0 !important;
+  }
+
+  .btn table {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .btn a {
+    font-size: 16px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+@media all {
+  .ExternalClass {
+    width: 100%;
+  }
+
+  .ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+    line-height: 100%;
+  }
+
+  .apple-link a {
+    color: inherit !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    text-decoration: none !important;
+  }
+
+  #MessageViewBody a {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+}
+</style>
+  </head>
+  <body style="font-family: Helvetica, sans-serif; -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 1.3; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #f4f5f6; margin: 0; padding: 0;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f4f5f6; width: 100%;" width="100%" bgcolor="#f4f5f6">
+      <tr>
+        <td style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top;" valign="top">&nbsp;</td>
+        <td class="container" style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; max-width: 600px; padding: 0; padding-top: 24px; width: 600px; margin: 0 auto;" width="600" valign="top">
+          <div class="content" style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 600px; padding: 0;">
+
+            <!-- START CENTERED WHITE CONTAINER -->
+            <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">This is preheader text. Some clients will show this text as a preview.</span>
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #ffffff; border: 1px solid #eaebed; border-radius: 16px; width: 100%;" width="100%">
+
+<!-- HEADER WITH LOGO -->              
+              <tr>
+                <td class="wrapper" style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 24px;" valign="top">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%; min-width: 100%;" width="100%">
+                        <tr>
+                            <td align="center" style="border-collapse:collapse;border-spacing:0;margin:0;padding:0" valign="top">
+                                <img src="https://funnel.dev.weirdspace.xyz/assets/img/soaringpenguinpresslogo.jpg" width="159" alt="Soaring Penguin Press" style="width:159px;max-width:100%;object-fit:cover;padding:0px;outline:none;border:none;display:block" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+<!-- end HEADER WITH LOGO -->
+<!-- START MAIN CONTENT AREA -->
+            <tr>
+                <td width="100%" style="text-decoration:none;padding:5px 24px 15px;line-height:1.25;font-weight:normal;font-style:normal;font-size:14px;font-family:Lato,&quot;Trebuchet MS&quot;,sans-serif">
+                    <p>Hello {{Name}}</p>
+                    <p>Sorry for the long silence. I wasn't happy with any of the email services available, so I decided to build my own. It took me a bit longer than I'd like but I've got something working now.</p>
+                    <p>I'll get more regular emails out from this point on, to tell you all about Meanwhile... The Best, Meanwhile... the quarterly anthology, and other titles coming up.</p>
+                </td>
+            </tr>
+
+<!-- END MAIN CONTENT AREA -->
+              </table>
+
+            <!-- START FOOTER -->
+            <div class="footer" style="clear: both; padding-top: 24px; text-align: center; width: 100%;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
+                <tr>
+                  <td class="content-block" style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center;" valign="top" align="center">
+                    <span class="apple-link" style="color: #9a9ea6; font-size: 16px; text-align: center;">Soaring Penguin Press, 12 Lexden Drive, Seaford East Sussex BN25 3BD </span>
+                    <!--<br> Don't like these emails? <a href="http://htmlemail.io/blog" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">Unsubscribe</a>.-->
+                  </td>
+                </tr>
+                <tr>
+                  <td class="content-block powered-by" style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center;" valign="top" align="center">
+                    Maintained by <a href="https://weirdspace.com" style="color: #9a9ea6; font-size: 16px; text-align: center; text-decoration: none;">Weirdspace</a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- END FOOTER -->
+            
+<!-- END CENTERED WHITE CONTAINER --></div>
+        </td>
+        <td style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top;" valign="top">&nbsp;</td>
+      </tr>
+    </table>
+  </body>
+</html>

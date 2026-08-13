@@ -17,8 +17,7 @@
     <div class="header__wrapper">
         <div class="header__text">
             <h1>Meanwhile... The Best</h1>
-            <h2>Get <span class="shout">25%</span> off cover price!</h2>
-            <p>For £1 now!</p>
+            <h2>Thank you so much for your support!</h2>
         </div>
         <div class="header__image">
             <img src="https://funnel.dev.weirdspace.xyz/assets/img/meanwhilethebestcover-3d.png" />
@@ -26,21 +25,12 @@
     </div>
 </header>
 <div class="explanation">
-    <h3>What I'm trying to do</h3>
-    <p>Until the campaign begins, we have a special offer for you: for a small deposit now, you'll be able to get {{title}} at 25% off the cover price! And we'll post it out to you for free!</p>
+    <p>The campaign will start shortly; and we will, of course, let you know</p>
 
-    <p>But you need to act fast. As soon as the campaign starts, this special offer will no longer be available.</p>
 </div>
 
 </div>
-<div class="form">
-    <form action="https://funnel.dev.weirdspace.xyz/special-offer/meanwhile-the-best" method="post">
-
-        {{formContent}}
-
-        <input type="submit" name="submit" value="I'm sold" />
-    </form>
-</div></div><!-- end container -->
+</div><!-- end container -->
 
 <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
 </div><!-- end container -->

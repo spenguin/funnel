@@ -129,7 +129,7 @@
                 <tr>
                   <td class="content-block" style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center;" valign="top" align="center">
                     <span class="apple-link" style="color: #9a9ea6; font-size: 16px; text-align: center;">Soaring Penguin Press, 12 Lexden Drive, Seaford East Sussex BN25 3BD </span>
-                    <!--<br> Don't like these emails? <a href="http://htmlemail.io/blog" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">Unsubscribe</a>.-->
+                    <p style="font-size:13px;margin-top:0.5rem;margin-bottom:0.5rem;">Don't like these emails? Email <a href="mailto:info@weirdspace.com">info@weirdspace.com</a> with Subject: Unsubscribe
                   </td>
                 </tr>
                 <tr>
