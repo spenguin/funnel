@@ -16,9 +16,12 @@ class Campaigns extends BaseController
         $this->_mcampaigns  = model(CampaignsModel::class);
         $this->_memail_types= model(EmailTypesModel::class);
         $this->_mcampaign_customers = model(CampaignCustomersModel::class);
+        $this->_mfiles      = model(FilesModel::class);
         // $this->_mcampaign_email_type = model(CampaignEmailTypesModel::class);
         $this->_request     = \Config\Services::request();
 		$this->_validation	= service('validation');
+
+        helper(['Tools', 'form']);
     }
 
     /**
@@ -30,7 +33,7 @@ class Campaigns extends BaseController
             'campaigns' => $this->_mcampaigns->getCampaign(),
             'campaignCustomers' => $this->_mcampaign_customers->getCustomerGroupedByCampaign(),
             'title'     => 'Campaigns'
-        ];
+        ]; 
 
         return view('admin/campaigns', $data );      
     }
@@ -40,12 +43,13 @@ class Campaigns extends BaseController
      */
     public function details( $campaignId = NULL )
     {
-        if( is_null($campaignId) ) return redirect()->to( site_url() . 'campaign' );
+        if( is_null($campaignId) ) return redirect()->to( site_url() . 'campaigns' );
 
         $data   = [];
 
         $data['campaign']   = $this->_mcampaigns->getCampaign($campaignId);
-        $data['customers']  = $this->_mcampaign_customers->getCampaignCustomers($campaignId);
+        $data['customers']  = $this->_mcampaign_customers->getCampaignCustomerDetails($campaignId);
+        $data['files']      = $this->_mfiles->getFilesByCampaignId( $campaignId );
 
         return view( 'admin/campaigns/details', $data );
     }
@@ -59,13 +63,23 @@ class Campaigns extends BaseController
 
             if( ! $this->_validation->run($data) )
             {
-                // Provide error messages
+                return $this
+                    ->getResponse(
+                        $this->validator->getErrors(),
+                        ResponseInterface::HTTP_BAD_REQUEST
+                    );                
             }
             else
             {
                 // Create new Campaign
+                $data['slug']   = url_title( $data['name'] );
+                $data['status'] = 1;
+                $campaign = new $this->_mcampaigns();
+                $campaign->save($data);
+                $campaign_id = $this->_mcampaigns->db->insertID(); 
 
-                // Create Landing Page
+                // goto Create Signup File
+                return redirect()->to( site_url() . 'files/edit/' . $campaign_id. '/' . '1' ); 
             }
         }
         $data   = [];

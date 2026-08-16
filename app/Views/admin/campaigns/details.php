@@ -24,13 +24,33 @@
 <?= $this->section('content') ?>
     <p>Campaign Details</p>
     <p>Customers</p>
-    <ul>
+    <table>
         <?php 
-            foreach( $customers as $customer ): ?>
-                <li><?php echo $customer['customer_id']; ?>
+            foreach( $customers as $customer ): //var_dump($customer); ?>
+                <tr>
+                    <td><?php echo $customer['id']; ?></td>
+                    <td><?php echo $customer['name']; ?></td>
+                    <td><?php echo $customer['email']; ?></td>
+                    <td><?php echo $customer['campaign_email_sent']; ?></td>
+                    <td><?php echo $customer['paid']; ?></td>
+                </tr>
             <?php endforeach;
         ?>
-    </ul>
+    </table>
     <p>File Types created</p>
+    <table>
+        <?php 
+            foreach( $files as $file ): ?>
+                <tr>
+                    <td><?php echo $file['id']; ?></td>
+                    <td><?php echo $file['file_type_id']; ?></td>
+                    <td><a href="/files/view/<?php echo $file['name']; ?>" target="_blank"><?php echo $file['name']; ?></a></td>
+                    <td><?php echo $file['preceding_file_id']; ?></td>
+                    <td><?php echo $file['file_delay']; ?></td>
+                </tr>
+
+        <?php endforeach; ?>
+    </table>
+
 
 <?php echo $this->endSection(); ?>

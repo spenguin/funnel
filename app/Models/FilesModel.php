@@ -44,4 +44,11 @@ class FilesModel extends Model
         return $this->where( ['campaign_id'=>$campaignId, 'preceding_file_id'=>$fileId])->first();
     }
 
+    public function getFilesByCampaignId( $campaignId = NULL )
+    {
+        if( is_null( $campaignId ) ) return [];
+
+        return $this->where(['campaign_id'=>$campaignId])->findAll();
+    }
+
 }

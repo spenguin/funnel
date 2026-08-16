@@ -19,5 +19,14 @@
 
 <?php echo $this->section('content'); ?>
 	<p>Create or Update File</p>
+	<?php echo form_open('files/save'); ?>
+		<?php echo form_dropdown( 'campaignId', $campaigns, $campaignId ); ?>
+		<?php echo form_input( 'subject' ); ?>
+		<?php echo form_dropdown( 'file_type_id', $file_types, $fileTypeId ); ?>
+		<?php echo form_textarea( 'body' ); ?>
+		<?php echo form_submit( 'submit', 'Submit' ); ?>
+
+	<?php echo form_close(); ?>
+
 
 <?php echo $this->endSection(); ?>

@@ -63,4 +63,18 @@ class CampaignCustomersModel extends Model
        
     }
 
+    /**
+     * Get Customer Details by Campaign Id
+     * @return array
+     */
+    public function getCampaignCustomerDetails( $campaignId = NULL )
+    {
+        if( is_null($campaignId ) ) return [];
+
+        return $this->select( 'campaign_customers.paid,campaign_email_sent, customers.* ' )
+                ->join( 'customers', 'campaign_customers.customer_id = customers.id' )
+                ->where( 'campaign_customers.campaign_id', $campaignId )->findAll();
+
+    }
+
 }

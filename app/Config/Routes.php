@@ -62,6 +62,7 @@ $routes->group('',['filter' => 'AlreadyLoggedIn'], function ($routes) {
     $routes->get( 'files/view/(:any)', 'admin\Files::view/$1' );
     $routes->get( 'files/edit/(:num)', 'admin\Files::edit/$1' );
     $routes->get( 'files/edit/(:num)/(:num)', 'admin\Files::edit/$1/$2' );
+    $routes->post( 'files/save', 'admin\Files::save' );
     $routes->post( 'files/sendTest/(:any)', 'admin\Files::sendTest/$1' );
 
     $routes->get( 'emails', 'admin/Emails::index' );

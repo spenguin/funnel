@@ -48,7 +48,7 @@
 							<td><a href="/campaigns/details/<?php echo $campaign['id']; ?>"><?php echo $campaign['id']; ?></a></td>
 							<td><?php echo $campaign['name']; ?></td>
 							<td><?php echo $campaign['description']; ?></td>
-							<td><?php echo count($campaignCustomers[$campaign['id']]); ?></td>
+							<td><?php echo isset( $campaignCustomers[$campaign['id']] ) ?  count($campaignCustomers[$campaign['id']]) : 0; ?></td>
 							<!-- <td><?php echo $campaign['pledge_goal']; ?></td>
 							<td><?php echo $campaign['pledge_count']; ?></td>
 							<td><?php echo $campaign['pledge_goal'] - $campaign['pledge_count']; ?></td>
