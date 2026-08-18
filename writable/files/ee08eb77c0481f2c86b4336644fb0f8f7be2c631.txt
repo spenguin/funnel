@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Meanwhile... The Best</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="stylesheet" href="https://funnel.dev.weirdspace.xyz/assets/css/preview.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Zen+Dots&display=swap" rel="stylesheet">    
+	<link rel="stylesheet" href="https://funnel.dev.weirdspace.xyz/assets/forgetting-to-remember/stylesheet.css">
+</head>
+<body class="funnel meanwhile-the-best">
+	<header>
+
+	</header>
+	<div class="container">
+        <header class="header">
+            <div class="header__wrapper">
+                <div class="header__text">
+                    <h1>Forgetting to Remember</h1>
+                    <h2>What happens when longevity exceeds expectations</h2>
+                    <p>Prentis Rollins SF graphic novel explores the nature of memory. And life.</p>        
+                </div>
+                <div class="header__image">
+                    <img src="https://funnel.dev.weirdspace.xyz/assets/forgetting-to-remember/3d-cover-image.png" />
+                </div>
+            </div>
+        </header>
+        <div class="explanation">
+            <h3>What I'm trying to do</h3>
+            <p>Later this year, I'll be publishing Meanwhile... The Best.</p>
+            <!-- <p>Shortly, we'll be launching a crowd funding campaign for Meanwhile... The Best.</p> -->
+            <p>To whet your appetite, I'd like to offer you an Advanced Reader Preview.</p>
+            <p>Then, regularly, I'll tell you what further plans I have for the title.</p>
+            <p>Because... I have plans.</p>
+        </div>
+
+        <!-- <div class="opening">
+            <p>Opening</p>
+
+        </div>
+        <div class="videoblock">
+            <p>Video block</p>
+        </div> -->
+        <div class="quotes">
+            <h3>What Readers Say</h3>
+            <div class="quote__wrapper">
+                <div class="quote">
+                    <div class="quote__image">
+                        <img src="https://funnel.dev.weirdspace.xyz/assets/img/antonyjohnson.jpg">
+                    </div>
+                    <p>“Stories ranging from charming to frightening or exciting, and always engaging, this is a great showcase of emerging comics talent”</p>
+                    <p class="quote__name">Antony Johnston</p>
+                    <p class="quote__title">Writer, Atomic Blonde, Dog Sitter Detective, Resident Evil Village</p>
+                </div>
+                <div class="quote">
+                    <div class="quote__image">
+                        <img src="https://funnel.dev.weirdspace.xyz/assets/img/michaelgilbert.jpg">
+                    </div>            
+                    <p>“I’ve just had the pleasure of reading Meanwhile... The Best, and I’m delighted to report that it has first-rate stories and terrific art. Do yourself a favor and pick up a
+        copy!”</p>
+                    <p class="quote__name">Michael T Gilbert</p>
+                    <p class="quote__title">Writer,/Artist Mr Monster, The Wraith</p>
+                </div>
+                <div class="quote">
+                    <div class="quote__image">
+                        <img src="https://funnel.dev.weirdspace.xyz/assets/img/DavidHine2015.jpg">
+                    </div>             
+                    <p>“[Y]ou may well find that every single one of these stories, against all the odds, is very much your thing.”</p>
+                    <p class="quote__name">David Hine</p>
+                    <p class="quote__title">Writer, Silent War, Bulletproof Coffin (from his introduction)</p>
+                </div>  
+            </div>    
+        </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="book">
+            <h3>About the Book</h3>
+            <div class="book__wrapper">
+                <p class="book__title">Forgetting to Remember</p>
+                <p>Page count: 216pp</p>
+                <p>Trim size: h 180mm x w 260mm</p>
+                <p>Illustrations: Full Colour</p>
+                <p>Format: Digital, Hardcover</p>
+                <p>ISBN: 978-1-908030-59-7</p>
+                <p>Price: UKP29.99</p>
+            </div>
+        </div>
+        <div class="creators">
+            <h3>Who is the Creator</h3>
+            <p>Prentis Rollins is a veteran of the American comics industry, having contributed art to such best-selling titles as Green Lantern: Rebirth, Green Lantern Corps, DC: One Million, JLA Incarnations, DC 2000, Power Company, Flash: Iron Heights, Batman: The Ultimate Evil, Hardware, New X-Men, and many others.<br><br>
+            He is the author of The Furnace (A Graphic Novel) (Tor Books, 2018), How to Draw Sci-fi Heroes and Villains (Phaidon, 2023), How to Draw Sci-fi Utopias and Dystopias (Phaidon, 2016), The Making of a Graphic Novel (The Resonator) (Penguin/Random House, 2006), and Survival Machine (Stories) (Monkeysuit Press, 2002).<br><br>
+            He was featured artist for Volume 3 of the acclaimed graphic novel series Jekyll Island Chronicles (IDW/Top Shelf, 2021). He was co-founder and editor of Monkeysuit Press, which published five critically-acclaimed anthologies of New York-based indie comics creators between 2000-2005. He lives with his family in London.</p>
+        </div>
+        <!--  -->
+        <div class="form">
+            <h3>What do you think?</h3>
+            <!-- <p> Want to give us your email address and we'll give you a preview? And we'll let you know when the campaign is about to launch.</p> -->
+            <p>Want to see the Advanced Reader Preview? Fill in the form below.</p>
+            <form action="https://funnel.dev.weirdspace.xyz/preview/meanwhile-the-best" method="post">
+                <label for="name">Name: <input type="text" name="name" required/></label>
+                <label for="email">Email: <input type="email" name="email" required/></label>
+                <input type="submit" name="submit" value="I'd like to see it" />
+                <p>Your Preview will appear in your inbox shortly. And I'll be telling you more about my plans for Meanwhile... in later emails.</p>
+            </form>
+        </div></div><!-- end container -->
+
+        <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
+        </div><!-- end container -->
+    <footer>
+        
+        <div class="copyrights">
+            <p>&copy; 2026 Weirdspace/Soaring Penguin Press</p>
+        </div>
+    </footer>
+</body>
+</html>

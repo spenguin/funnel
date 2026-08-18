@@ -1,0 +1,17 @@
+/** Component style */
+
+.header {
+    background-color: $F2RBeige;
+    h1 {
+        color: $F2RBlack;
+    }
+    h2 {
+        color: $F2RCream;
+    }
+    p {
+        color: $F2RBlack;
+        font-size: clamp(1.25rem, 0.452rem + 3.497vw, 3.25rem);
+        line-height: 1.85rem;
+        margin-top: 2rem;
+    }
+}

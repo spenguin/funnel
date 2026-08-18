@@ -1,0 +1,21 @@
+/** Heading styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-family;
+    text-align: center;
+}
+h1 {
+    font-size: clamp(1.5rem, 0.702rem + 3.497vw, 3.5rem);
+}
+h2 {
+    font-size: clamp(1rem, 0.202rem + 3.497vw, 3rem);
+    font-style: italic;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+}

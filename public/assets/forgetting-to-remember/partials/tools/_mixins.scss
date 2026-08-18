@@ -1,0 +1,48 @@
+/** Mixins */
+
+/**
+Function to generate an RGB colour backgrund with a provided opacity
+(https://stackoverflow.com/questions/10929458/sass-converting-hex-to-rgba-for-background-opacity)
+*/
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+  }
+  /*
+  element {
+       @include background-opacity(#333, 0.5);
+  }*/
+  
+//   @import "../partials/variables";
+  /**
+  Function to wrap appropriate media query around content
+  param: screen size, either tablet or desktop 
+  Requires breakpoints to be set or imported
+  */
+  @mixin screen-greater-than($size) {
+    @if ($size == tablet) {
+      @media screen and (min-width: $tabletWidth) {
+        @content;
+      }
+    } @else if ($size == desktop) {
+      @media screen and (min-width: $desktopWidth) {
+        @content;
+      }
+    } @else if ($size == maxwidth) {
+      @media screen and (min-width: 2000px) {
+        @content;
+      }
+    }
+  }
+  
+  /**
+  Function to provide necessary prefixes for grayscale (sic) filter
+  param: percentage filtered
+  Note: Yes, this should probably take a parameter of _which_ filter to apply. Maybe next time
+  http://shouldiprefix.com/#filters
+  */
+  @mixin greyscale($pc: 100%) {
+    -webkit-filter: grayscale($pc); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale($pc); /* FF 35+ */
+  }
+  

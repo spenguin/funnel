@@ -1,0 +1,27 @@
+/** Variables */
+
+/** Breakpoints */
+
+$tabletWidth: 768px;
+$desktopWidth: 1200px;
+
+
+// Border Radii
+$borderRadius: 0.1875rem;
+$btnRadius: 0.125rem;
+$formRadius: 0.5rem;
+
+$maxWidth-Narrow: 729px;
+
+$aspectRatioPercentage: 56.25%;
+
+/* Max width wrapper */
+.max-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+  
+.hidden {
+    display: none;
+}
+
