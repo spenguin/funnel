@@ -8,6 +8,8 @@
 	<nav>
 		<a href="<?= base_url('/') ?>">Home</a> | 
 		<a href="<?= base_url('/about') ?>">About</a> |
+        <a href="<?= base_url('/campaigns') ?>">Campaigns</a> |
+        <a href="<?= base_url('/emails') ?>">Emails</a> |		
 		<?php $session = session(); ?>
 		<?php if( is_null($session->logged) ): ?>
 			<a href="<?= base_url('/login') ?>">Login</a>

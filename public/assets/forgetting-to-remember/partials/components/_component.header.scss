@@ -10,8 +10,8 @@
     }
     p {
         color: $F2RBlack;
-        font-size: clamp(1.25rem, 0.452rem + 3.497vw, 3.25rem);
-        line-height: 1.85rem;
+        font-size: clamp(1.25rem, 0.452rem + 3.497vw, 1.5rem);
+        line-height: clamp(1.85rem, 0.976rem + 3.832vw, 1.85rem);
         margin-top: 2rem;
     }
 }

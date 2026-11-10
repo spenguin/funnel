@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Meanwhile... The Best</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="stylesheet" href=" https://offers.soaringpenguinpress.com/assets/css/preview.css">
+	<link rel="stylesheet" href=" https://offers.soaringpenguinpress.com/meanwhile-the-best/css/meanwhile-the-best.css">
+</head>
+<body class="funnel meanwhile-the-best">
+	<header>
+
+	</header>
+	<div class="container"><header class="header">
+    <div class="header__wrapper">
+        <div class="header__text">
+            <h1>Meanwhile... The Best</h1>
+            <h2>Thank you so much for your support!</h2>
+        </div>
+        <div class="header__image">
+            <img src="https://funnel.dev.weirdspace.xyz/assets/img/meanwhilethebestcover-3d.png" />
+        </div>
+    </div>
+</header>
+<div class="explanation">
+    <p>The campaign will start shortly; and we will, of course, let you know</p>
+
+</div>
+
+</div>
+</div><!-- end container -->
+
+<!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
+</div><!-- end container -->
+    <footer>
+        
+        <div class="copyrights">
+            <p>&copy; 2026 Weirdspace/Soaring Penguin Press</p>
+        </div>
+    </footer>
+</body>
+</html>

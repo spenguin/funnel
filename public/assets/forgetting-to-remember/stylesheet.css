@@ -1160,20 +1160,32 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: clamp(1.5rem, 0.702rem + 3.497vw, 3.5rem);
+  line-height: clamp(2.5rem, 1rem + 3.5vw, 3.5rem);
 }
 
 h2 {
-  font-size: clamp(1rem, 0.202rem + 3.497vw, 3rem);
+  font-size: clamp(1rem, 0.202rem + 3.497vw, 1.5rem);
   font-style: italic;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: clamp(1rem, 0.202rem + 3.497vw, 2rem);
 }
 
 h4 {
   font-size: 1rem;
   text-transform: uppercase;
+}
+
+/** Section styles */
+.section {
+  padding-top: 2rem !important;
+}
+.section p {
+  color: #0a0701;
+  font-size: clamp(1.25rem, 0.452rem + 3.497vw, 1.85rem);
+  line-height: clamp(1.85rem, 0.976rem + 3.832vw, 2.85rem);
+  margin-top: 1.5rem;
 }
 
 /** Component Aggregator */
@@ -1189,8 +1201,8 @@ h4 {
 }
 .header p {
   color: #0a0701;
-  font-size: clamp(1.25rem, 0.452rem + 3.497vw, 3.25rem);
-  line-height: 1.85rem;
+  font-size: clamp(1.25rem, 0.452rem + 3.497vw, 1.5rem);
+  line-height: clamp(1.85rem, 0.976rem + 3.832vw, 1.85rem);
   margin-top: 2rem;
 }
 

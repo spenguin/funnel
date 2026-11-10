@@ -102,7 +102,7 @@ class Funnel extends BaseController
         } 
         // Save input
         // Create Customer if new; else return existing
-        $customer = $this->_mcustomers->getCustomerByEmail( $input['email'] );
+        $customer = $this->_mcustomers->getCustomerByEmail( $input['email'] ); 
         
         if( is_null( $customer ) )
         {

@@ -29,14 +29,14 @@
                 </div>
             </div>
         </header>
-        <div class="explanation">
-            <h3>What I'm trying to do</h3>
-            <p>Later this year, I'll be publishing Meanwhile... The Best.</p>
-            <!-- <p>Shortly, we'll be launching a crowd funding campaign for Meanwhile... The Best.</p> -->
-            <p>To whet your appetite, I'd like to offer you an Advanced Reader Preview.</p>
-            <p>Then, regularly, I'll tell you what further plans I have for the title.</p>
-            <p>Because... I have plans.</p>
-        </div>
+        <section class="section explanation">
+            <h3>Let me tell you about the book</h3>
+            <p>If you lived forever, how much would you remember of past times?</p>
+            <p>That’s the question that Briggs must face. When a virus wipes out almost all life on Earth, Briggs finds himself one of the very, very few who are now... immortal. </p>
+            <p>With a body that heals from almost any injury, the only concern is how much information can a human mind retain? What memories provide the bare essence of a personality - and which ones can be - should be - discarded.</p>
+            <p>In <em>Forgetting to Remember</em> Prentis Rollins asks what would remain of someone’s personal identity, if they lived 8,000 years? What indeed would happen to a mind—evolved to last about 80 years—if it were compelled to persist that long? 
+            <p><em>Forgetting to Remember</em> is in the tradition of immortal-themed scifi stories and novels. But it approaches this tradition from a new, epistemological angle.</p>
+        </section>
 
         <!-- <div class="opening">
             <p>Opening</p>
@@ -45,7 +45,7 @@
         <div class="videoblock">
             <p>Video block</p>
         </div> -->
-        <div class="quotes">
+        <!--<section class="quotes">
             <h3>What Readers Say</h3>
             <div class="quote__wrapper">
                 <div class="quote">
@@ -74,7 +74,7 @@
                     <p class="quote__title">Writer, Silent War, Bulletproof Coffin (from his introduction)</p>
                 </div>  
             </div>    
-        </div>
+        </section>-->
         <!--  -->
 
         <!--  -->
@@ -90,22 +90,22 @@
                 <p>Price: UKP29.99</p>
             </div>
         </div>
-        <div class="creators">
+        <section class="section creators">
             <h3>Who is the Creator</h3>
             <p>Prentis Rollins is a veteran of the American comics industry, having contributed art to such best-selling titles as Green Lantern: Rebirth, Green Lantern Corps, DC: One Million, JLA Incarnations, DC 2000, Power Company, Flash: Iron Heights, Batman: The Ultimate Evil, Hardware, New X-Men, and many others.<br><br>
             He is the author of The Furnace (A Graphic Novel) (Tor Books, 2018), How to Draw Sci-fi Heroes and Villains (Phaidon, 2023), How to Draw Sci-fi Utopias and Dystopias (Phaidon, 2016), The Making of a Graphic Novel (The Resonator) (Penguin/Random House, 2006), and Survival Machine (Stories) (Monkeysuit Press, 2002).<br><br>
             He was featured artist for Volume 3 of the acclaimed graphic novel series Jekyll Island Chronicles (IDW/Top Shelf, 2021). He was co-founder and editor of Monkeysuit Press, which published five critically-acclaimed anthologies of New York-based indie comics creators between 2000-2005. He lives with his family in London.</p>
-        </div>
+        </section>
         <!--  -->
-        <div class="form">
+        <div class="section form">
             <h3>What do you think?</h3>
-            <!-- <p> Want to give us your email address and we'll give you a preview? And we'll let you know when the campaign is about to launch.</p> -->
-            <p>Want to see the Advanced Reader Preview? Fill in the form below.</p>
-            <form action="https://funnel.dev.weirdspace.xyz/preview/meanwhile-the-best" method="post">
+            <p> Give us your email address and we'll give you the Advanced Reader Preview? And we'll let you know when the campaign is about to launch.</p>
+            <!-- <p>Want to see the Advanced Reader Preview? Fill in the form below.</p> -->
+            <form action="https://funnel.dev.weirdspace.xyz/preview/forgetting-to-remember" method="post">
                 <label for="name">Name: <input type="text" name="name" required/></label>
                 <label for="email">Email: <input type="email" name="email" required/></label>
                 <input type="submit" name="submit" value="I'd like to see it" />
-                <p>Your Preview will appear in your inbox shortly. And I'll be telling you more about my plans for Meanwhile... in later emails.</p>
+                <p>Your Preview will appear in your inbox shortly.</p>
             </form>
         </div></div><!-- end container -->
 

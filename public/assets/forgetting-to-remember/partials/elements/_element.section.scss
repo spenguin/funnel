@@ -1,0 +1,11 @@
+/** Section styles */
+
+.section {
+    padding-top: 2rem!important;
+    p {
+        color: $F2RBlack;
+        font-size: clamp(1.25rem, 0.452rem + 3.497vw, 1.85rem);
+        line-height: clamp(1.85rem, 0.976rem + 3.832vw, 2.85rem);
+        margin-top: 1.5rem;
+    }
+}

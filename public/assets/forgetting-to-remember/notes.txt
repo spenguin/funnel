@@ -1,2 +1,16 @@
 cd "J:\Weirdspace\Projects\Funnel\build\public\assets\forgetting-to-remember"
-sass --watch scss/main.scss:stylesheet.css
+sass --watch main.scss:stylesheet.css
+
+
+Campaign Flow:
+File type: 1
+File type: 5
+File type: 2
+File type: 5
+File type: 3
+File type: 4
+
+
+
+Create new campaign:
+Need Landing Page, Signup Thank you Page, Pledge Offer Page, Pledge Thank you page, Signup Email

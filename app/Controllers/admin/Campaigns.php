@@ -78,7 +78,37 @@ class Campaigns extends BaseController
                 $campaign->save($data);
                 $campaign_id = $this->_mcampaigns->db->insertID(); 
 
+                // Create required files
+                $templatesArray = [
+                    1 => 'landing-page-template.txt',
+                    5 => 'signup-email-template.txt',
+                    3 => 'pledge-offer-page-template.txt',
+                    2 => 'pledge-thank-you-page-template.txt'
+                ];
+                $preceding_file_id  = 0;
+                foreach( $templatesArray as $key => $fileTemplateName )
+                {
+                    $fileName   = sha1(rand()) . '.txt';
+                    $filePath   = WRITEPATH  . 'files/' . $fileName;
+                    $fileTemplatePath       = WRITEPATH  . 'files/' . $fileTemplateName;
+
+                    $fileTemplateContent    = file_get_contents($fileTemplatePath);
+                    file_put_contents( $filePath, $fileTemplateContent );
+
+                    // Add File to db
+                    $data   = [
+                        'file_type_id'  => $key,
+                        'campaign_id'   => $campaign_id,
+                        'name'          => $fileName,
+                        'preceding_file_id' => $preceding_file_id
+                    ];
+
+                    $fileId     = $this->_mfiles->insert( $data );                    
+                    $preceding_file_id  = $key;
+                }
+
                 // goto Create Signup File
+
                 return redirect()->to( site_url() . 'files/edit/' . $campaign_id. '/' . '1' ); 
             }
         }
