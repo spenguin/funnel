@@ -1,0 +1,44 @@
+<!-- Declare the master template path -->
+<?= $this->extend('layouts/admin') ?>
+
+<!-- Inject the title section -->
+<?= $this->section('title') ?>
+    Dashboard
+<?= $this->endSection() ?>
+
+<!-- Inject the navigation section -->
+<?php echo $this->section('navigation'); ?>
+    <nav>
+        <a href="<?= base_url('/') ?>">Home</a> | 
+        <a href="<?= base_url('/campaigns') ?>">Campaigns</a> |
+        <a href="<?= base_url('/emails') ?>">Emails</a> |
+        <a href="<?= base_url('/logout') ?>">Logout</a>
+    </nav>
+<?php echo $this->endSection(); ?>
+
+<!-- Inject the content section -->
+<?= $this->section('content') ?>
+    <?php 
+        if( isset($title) )
+        {
+            switch ($title)
+            {
+                case 'campaign':
+                    ?>
+                    <h1>Campaign control</h1>
+                    <p>This is where you create or maintain Campaigns</p>
+                    <?php
+                    break;
+                case 'dashboard':
+                    ?>
+                    <h1>Dashboard</h1>
+                    <p>This is the Dashboard</p>
+                    <?php
+                    break;
+            }
+        }
+    ?>
+
+
+
+<?= $this->endSection() ?>
