@@ -23,10 +23,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    // $environment    = getenv('CI_ENVIRONMENT');
-    // public $baseURL = getenv($baseURLStr);
-
-    public $baseURL = 'https://funnel.dev.weirdspace.xyz/'; //'https://offers.soaringpenguinpress.com/'; //'http://localhost:8080/';
+    public $baseURL = ''; //getenv($baseURLStr);
 
     /**
      * --------------------------------------------------------------------------

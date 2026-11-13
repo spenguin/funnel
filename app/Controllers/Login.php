@@ -26,6 +26,7 @@ class Login extends BaseController
             if( ! $this->_validation->run($data) )
             {
                 // Provide error messages
+                echo validation_list_errors(); 
             }
             else
             {
@@ -40,7 +41,7 @@ class Login extends BaseController
                 }
             }
         }    
-    
+  
         return view('login');
     }
 
